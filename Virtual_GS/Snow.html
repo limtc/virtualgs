@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20081101" />
+    <meta name="viewport" content="width=700" />
+    <title>Snow
+</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="Snow_files/Snow.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='Snow_files/SnowIE.css'/><![endif]-->
+    <script type="text/javascript" src="Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="Scripts/iWebImage.js"></script>
+    <script type="text/javascript" src="Snow_files/Snow.js"></script>
+  </head>
+  <body style="background: #ffffff; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 10px; margin-left: auto; margin-right: auto; margin-top: 10px; overflow: hidden; position: relative; word-wrap: break-word;  background: #ffffff; text-align: left; width: 700px; " id="body_content">
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 20px; margin-top: 0px; position: relative; width: 660px; z-index: 1; ">
+    
+            <div id="widget0-navbar" class="navbar">
+
+      
+              <div id="widget0-bg" class="navbar-bg">
+
+        
+                <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                
+      
+</div>
+              
+    
+</div>
+          </div>
+          <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', 'Scripts/Widgets/Navbar', 'Scripts/Widgets/SharedResources', '.', {"current-page-GUID": "8B1B837C-BE47-4842-BD65-84A78425BBB5", "path-to-root": "", "isCollectionPage": "NO", "navbar-css": ".navbar {\n\tfont-family: 'Helvetica Neue', Arial, sans-serif;\n\tfont-size: .8em;\n\tcolor: #666666;\n\tline-height: 30px;\n\tborder-bottom: 3px solid #ccc;\n}\n\n.navbar-bg {\n\ttext-align: right;}\n\n.navbar-bg ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n\nli {\n\tlist-style-type: none;\n\tdisplay: inline;\n\tpadding: 0px 5px 0px 0px;\n}\n\n\nli a {\n\ttext-decoration: none;\n\tpadding: 10px;\n\tcolor: #666666;\n\tfont-weight: bold;\n}\n\nli a:visited {\n\ttext-decoration: none;\n\tpadding: 10px;\n\tcolor: #666666;\n\tfont-weight: bold;\n}\n\nli a:hover\r{\r\n \tcolor: #999999;\n\ttext-decoration: none;\r}\n\n\nli.current-page a\r{\r\t color: #66ABC5;\n\ttext-decoration: none;\r}"});
+//--><!]]></script>
+          <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 87px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div id="id1" style="height: 87px; left: 20px; position: absolute; top: 0px; width: 515px; z-index: 1; " class="style_SkipStroke">
+            <div class="text-content style_External_515_87" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-top: 0pt; " class="Header">Snow<br /></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+          <div style="margin-left: 350px; margin-top: 21px; position: relative; width: 330px; z-index: 1; " class="style_SkipStroke_1 flowDefining">
+            <div class="text-content style_External_330_806" style="padding: 0px; ">
+              <div class="style_1">
+                <p style="padding-top: 0pt; " class="paragraph_style">program snow;<br /></p>
+                <p class="paragraph_style">uses types,quickDraw,events,miscTool;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">type<br /></p>
+                <p class="paragraph_style">  snow = record<br /></p>
+                <p class="paragraph_style">    x: integer;<br /></p>
+                <p class="paragraph_style">    y: integer;<br /></p>
+                <p class="paragraph_style">    speed: integer;<br /></p>
+                <p class="paragraph_style">  end;  <br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  i,slide: integer;<br /></p>
+                <p class="paragraph_style">  tick: longInt;<br /></p>
+                <p class="paragraph_style">  snows: array[1..100]of snow;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  tick := getTick;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  graphics(320);<br /></p>
+                <p class="paragraph_style">  setRandSeed(getTick);<br /></p>
+                <p class="paragraph_style">  hideCursor;<br /></p>
+                <p class="paragraph_style">  clearScreen(0);<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  { Setup snow }<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  for i:= 1 to 100 do begin<br /></p>
+                <p class="paragraph_style">    snows[i].x := random mod 320;<br /></p>
+                <p class="paragraph_style">    snows[i].y := i*10;<br /></p>
+                <p class="paragraph_style">    snows[i].speed := random mod 10+1;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  repeat<br /></p>
+                <p class="paragraph_style">    for i := 1 to 100 do begin<br /></p>
+                <p class="paragraph_style">      slide := random mod 11-5;<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">      { Erase snow }<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">      setSolidPenPat(0);<br /></p>
+                <p class="paragraph_style">      moveTo(snows[i].x,snows[i].y);<br /></p>
+                <p class="paragraph_style">      line(0,0);<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">      { Move snow }<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">      snows[i].y := snows[i].y+snows[i].speed;<br /></p>
+                <p class="paragraph_style">      snows[i].x := snows[i].x+slide;<br /></p>
+                <p class="paragraph_style">      if snows[i].y &gt; 190 then begin <br /></p>
+                <p class="paragraph_style">        snows[i].y := 0;<br /></p>
+                <p class="paragraph_style">        snows[i].x := random mod 320;<br /></p>
+                <p class="paragraph_style">        snows[i].speed := random mod 10+1;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">      { Draw snow }<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">      setSolidPenPat(15);<br /></p>
+                <p class="paragraph_style">      moveTo(snows[i].x,snows[i].y);<br /></p>
+                <p class="paragraph_style">      line(0,0);<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">    repeat until getTick-tick &gt; 5;<br /></p>
+                <p class="paragraph_style">    tick := getTick;<br /></p>
+                <p class="paragraph_style">  until button(0);<br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style">end.      </p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 187px; width: 300px;  height: 187px; left: 20px; position: absolute; top: 22px; width: 300px; z-index: 1; " class="tinyText style_SkipStroke_2 shadow_0">
+            <img src="Snow_files/Snow.jpg" alt="" style="border: none; height: 187px; width: 300px; " />
+          </div>
+          
+
+
+          <div id="id2" style="height: 141px; left: 20px; position: absolute; top: 242px; width: 300px; z-index: 1; " class="style_SkipStroke_3">
+            <div class="text-content graphic_textbox_layout_style_default_External_300_141" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-top: 0pt; " class="Free_Form">It is snowing! Merry Christmas!<br /></p>
+                <p class="Free_Form"><br /></p>
+                <p class="Free_Form">It demonstrate the use of type and array, to generate multiple objects. This is Ding Wen’s first program on multiple object animation.<br /></p>
+                <p class="Free_Form"><br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style_1">You can see the alternate Orca/Pascal version <a class="class1" href="Snow_2.html" title="Snow_2.html">here</a>. Orca/Pascal version is written using Object Pascal, an object oriented extension of the Pascal language.</p>
+              </div>
+            </div>
+          </div>
+          <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 0px; line-height: 0px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

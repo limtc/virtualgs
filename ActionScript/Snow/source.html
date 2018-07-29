@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<title>Snow</title>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body bgcolor="#222222" text="white" link="white" vlink="white">
+		<small>
+			<pre>
+package {
+	import flash.display.*;
+	import flash.events.*;
+	import flash.media.*;
+	import flash.net.URLRequest;	
+	
+	public class Snow extends Sprite { 
+		private var snows: Array = new Array;
+		private var music: Sound;
+				
+		public function Snow():void {
+
+			// Load sound effects
+			
+			music = new Sound (new URLRequest ("Snow.mp3"));
+			music.play(0, 99);
+			
+			// Create snow
+			
+			for (var i: int = 0; i < 100; i++) {
+				var snow: TheSnow = new TheSnow;
+				snows.push(snow);
+				addChild(snow);
+			}
+			
+			// Handle events
+			
+			addEventListener(Event.ENTER_FRAME,onEnterFrame);
+			stage.displayState = StageDisplayState.FULL_SCREEN;
+			stage.scaleMode = StageScaleMode.EXACT_FIT;	
+		}
+		
+		// Handle update event
+		
+		public function onEnterFrame(event: Event):void {
+			for each (var snow: TheSnow in snows)
+				snow.move();
+		}		
+	}
+}			
+
+package {
+	import flash.display.*;	
+	
+	public class TheSnow extends Sprite {
+		private var speed: int;
+		private var slide: int;
+		private var size: int;
+		 	
+		public function TheSnow():void {
+			size = Math.random() * 6;
+			x = Math.random() * 640;
+			y = Math.random() * 400;
+			
+			graphics.beginFill(0xFFFFFF);
+			graphics.drawCircle(0,0,size / 2);
+			graphics.endFill();
+		}
+		
+		// Move Snow
+		
+		public function move():void {
+			speed = Math.random() * (6 + 1);
+			slide = Math.random() * (10 - 5);
+			
+			y += speed;
+			x += slide;
+			
+			if (x > 640)
+				x = 0;
+			
+			if (x < 0)
+				x = 640;
+			
+			if (y > 400) {
+				x = Math.random() * 640;
+				y = 0;
+			}
+		}				
+	}
+}
+			</pre>
+		</small>
+	</body>
+</html>

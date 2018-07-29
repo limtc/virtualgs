@@ -1,0 +1,290 @@
+<html>
+	<head>
+		<title>Simple Paint</title>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body bgcolor="#222222" text="white" link="white" vlink="white">
+		<small>
+			<pre>
+
+// Simple Paint - by Lim Thye Chean
+
+package {
+	import flash.ui.*;
+	import flash.events.*;
+	import flash.display.*;
+	import flash.geom.Matrix;
+
+	public class SimplePaint extends Sprite {
+		private var mouseDown:Boolean = false;
+		private var cursor:Shape = new Shape();
+		private var palette:Palette = new Palette();
+
+		public function SimplePaint() {
+			setCursor();
+			cursor.alpha = 0.8;
+
+			Mouse.hide();
+			addChild(palette);	
+			addChild(cursor);
+			
+			// Register events
+
+			stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+			stage.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+			stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+			stage.displayState = StageDisplayState.FULL_SCREEN;
+			stage.scaleMode = StageScaleMode.EXACT_FIT;
+		}
+
+		// Handle mouse events
+		
+		private function onMouseDown(event:MouseEvent):void {
+			if (event.target == stage) {
+				mouseDown = true;
+				palette.hide();
+				
+				// Draw dot
+				
+				graphics.moveTo(mouseX, mouseY);
+				graphics.lineStyle();
+				graphics.beginFill(palette.color);
+				graphics.drawCircle(mouseX, mouseY, palette.size);
+				graphics.endFill();
+				graphics.moveTo(mouseX, mouseY);
+			}
+			else {
+				palette.hide();
+				
+				if (event.ctrlKey) {
+					
+					// Set background color
+					
+					graphics.clear();
+					graphics.beginFill(palette.bcolor);
+					graphics.drawRect(0, 0, 640, 400);
+					graphics.endFill();
+				}
+				else if (event.shiftKey) {
+					
+					// Set background gradient color
+					
+					var matrix:Matrix = new Matrix();
+					matrix.createGradientBox(640, 400, 0, 0, 0);
+					
+					graphics.clear();
+					graphics.beginGradientFill(GradientType.LINEAR, 
+					  [palette.color, palette.bcolor], [1, 1], [0, 255], matrix);
+					graphics.drawRect(0, 0, 640, 400);
+					graphics.endFill();
+				}
+				else
+					setCursor();
+			}
+		}
+
+	 	private function onMouseUp(event:MouseEvent):void {
+			mouseDown = false;
+		}
+		
+		private function onMouseMove(event:MouseEvent):void {
+
+			// Move cursor
+			
+			cursor.x = mouseX;
+			cursor.y = mouseY;
+
+			if (mouseDown) {
+				
+				// Draw connected dots
+				
+				graphics.lineStyle(palette.size * 2, palette.color);
+				graphics.lineTo(mouseX, mouseY);
+			}
+			else
+			
+				// Show palette
+			
+				if (mouseY == 0)
+					palette.show();
+		}
+
+		// Set cursor
+		
+		private function setCursor():void {
+			cursor.graphics.clear();
+			cursor.graphics.lineStyle(1, 0xffffff);
+			cursor.graphics.beginFill(palette.color);
+			cursor.graphics.drawCircle(0, 0, palette.size);
+			cursor.graphics.endFill();
+		}
+		
+		// Handle keyboard event
+	
+		private function onKeyDown(event:KeyboardEvent):void {
+			switch (event.keyCode) {
+				
+				// Clear screen
+				
+				case Keyboard.BACKSPACE:
+				case Keyboard.DELETE:
+					graphics.clear();
+					mouseDown = false;
+					break;
+					
+				// Toggle palette
+				
+				case Keyboard.SPACE:
+					palette.toggle();
+					break;
+					
+				// Toggle cursor
+				
+				case Keyboard.TAB:
+					if (cursor.alpha == 0)
+						cursor.alpha = 0.8;
+					else
+						cursor.alpha = 0;
+			}
+		}
+	} 
+}
+
+package {
+	import flash.ui.*;
+	import flash.text.*;
+	import flash.events.*;
+	import flash.display.*;
+	import flash.geom.Matrix;
+
+	public class Palette extends Sprite {
+		public var size:int = 5;
+		public var color:uint = 0xffffff;
+		public var bcolor:uint = 0;
+		private var colors:Array = [0, 0x777777, 0x884411, 0x7722CC, 0xFF, 0x8800, 0xFF7700, 0xDD0000, 
+		  0xFFAA99, 0xFFFF00, 0xEE00, 0x44DDFF, 0xDDAAFF, 0x7788FF, 0xCCCCCC, 0xFFFFFF];
+		  
+		public function Palette() {
+			var i:int;
+			var title:TextField = new TextField();
+
+			// Draw palette
+			
+			var matrix:Matrix = new Matrix();
+			matrix.createGradientBox(640, 27, Math.PI / 2, 0, 0);
+					
+			graphics.beginGradientFill(GradientType.LINEAR, 
+			  [0, 0x666666], [1, 1], [0, 255], matrix);
+			graphics.drawRect(0, 0, 640, 27);
+			graphics.endFill();
+    	
+    		// Draw color boxes
+    	
+			for (i = 0; i < 16; i++) {
+				var cbox:ColorBox = new ColorBox(colors[i]);
+				cbox.x = i * 25 + 1;
+				cbox.y = 1;
+				cbox.addEventListener(MouseEvent.MOUSE_DOWN, onSetColor);
+				addChild(cbox);
+			}
+			
+			// Draw size boxes
+			
+			for (i = 0; i < 6; i++) {
+				var sbox:SizeBox = new SizeBox(i);
+				sbox.x = i * 25 + 405;
+				sbox.y = 1;
+				sbox.addEventListener(MouseEvent.MOUSE_DOWN, onSetSize);
+				addChild(sbox);
+			}
+			
+			// Draw title
+				
+			title.text = "Simple Paint";
+			title.x = 570;
+			title.y = 6;
+			title.selectable = false;
+			title.autoSize = TextFieldAutoSize.LEFT;
+			title.textColor = 0xcccccc;
+			addChild(title);
+		}
+		
+		// Show palette
+		
+		public function show():void {
+			y = 0;
+		}
+		
+		// Hide palette
+		
+		public function hide():void {
+			y = -30;
+		}
+		
+		// Toggle palette
+		
+		public function toggle():void {
+			if (y < 0)
+				show();
+			else
+				hide();
+		}
+
+		// Set color
+		
+		private function onSetColor(event:MouseEvent):void {
+			if (event.ctrlKey || event.shiftKey)
+				bcolor = event.target.color;
+			else
+				color = event.target.color;
+		}
+
+		// Set size
+		
+		private function onSetSize(event:MouseEvent):void {
+			size = event.target.size;
+		}
+	} 
+}
+
+package {
+	import flash.display.Sprite;
+
+	public class ColorBox extends Sprite {
+		public var color:uint;
+		
+		public function ColorBox(cl:uint) {
+			color = cl;
+			
+			graphics.lineStyle(1, 0x333333);
+			graphics.beginFill(color);
+			graphics.drawRect(0, 0, 25, 25);
+			graphics.endFill();	
+		}
+	}
+}
+
+package {
+	import flash.display.Sprite;
+
+	public class SizeBox extends Sprite {
+		public var size:int;
+		
+		public function SizeBox(sz:int) {
+			size = sz * 2 + 1;
+
+			graphics.beginFill(0, 0);
+			graphics.drawRect(0, 0, 25, 25);
+			graphics.endFill();
+
+			graphics.beginFill(0xffffff);
+			graphics.drawCircle(12, 12, size);
+			graphics.endFill();	
+		}
+	}
+}
+			</pre>
+		</small>
+	</body>
+</html>

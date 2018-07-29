@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20081101" />
+    <meta name="viewport" content="width=700" />
+    <title>Firework</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="Firework_2_files/Firework_2.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='Firework_2_files/Firework_2IE.css'/><![endif]-->
+    <script type="text/javascript" src="Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="Firework_2_files/Firework_2.js"></script>
+  </head>
+  <body style="background: #ffffff; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 0px; margin-left: auto; margin-right: auto; margin-top: 0px; overflow: hidden; position: relative; word-wrap: break-word;  background: #ffffff; text-align: left; width: 700px; " id="body_content">
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 35px; margin-top: 0px; position: relative; width: 630px; z-index: 1; ">
+    
+            <div id="widget0-navbar" class="navbar">
+
+      
+              <div id="widget0-bg" class="navbar-bg">
+
+        
+                <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                
+      
+</div>
+              
+    
+</div>
+          </div>
+          <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', 'Scripts/Widgets/Navbar', 'Scripts/Widgets/SharedResources', '.', {"current-page-GUID": "43BF9182-C7B9-4A8B-9F30-4D2749C1B9FD", "path-to-root": "", "isCollectionPage": "NO", "navbar-css": ".navbar {\n\tfont-family: Arial, sans-serif;\n\tfont-size: 1em;\n\tcolor: #666;\n\tmargin: 9px 0px 6px 0px;\n\tline-height: 30px;\n}\n\n.navbar-bg {\n\ttext-align: center;\n}\n\n.navbar-bg ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n\nli {\n\tlist-style-type: none;\n\tdisplay: inline;\n\tpadding: 0px 10px 0px 10px;\n}\n\n\nli a {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:visited {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:hover\r{\r\n \tcolor: #463C3C;\n\ttext-decoration: none;\r}\n\n\nli.current-page a\r{\r\t color: #463C3C;\n\ttext-decoration: none;\n\tfont-weight: bold;\r\r}"});
+//--><!]]></script>
+          <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 73px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div id="id1" style="height: 50px; left: 35px; position: absolute; top: 23px; width: 630px; z-index: 1; " class="style_SkipStroke">
+            <div class="text-content style_External_630_50" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header">Firework</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 1px; width: 630px;  height: 0px; left: 35px; position: absolute; top: 3px; width: 630px; z-index: 1; " class="tinyText">
+            <div style="position: relative; width: 630px; ">
+              <img src="Firework_2_files/shapeimage_1.jpg" alt="" style="height: 1px; left: 0px; position: absolute; top: 0px; width: 630px; " />
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+          <div style="margin-left: 340px; margin-top: 31px; position: relative; width: 360px; z-index: 1; " class="style_SkipStroke_1 flowDefining">
+            <div class="text-content style_External_360_1269" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-top: 0pt; " class="paragraph_style">program Firework;<br /></p>
+                <p class="paragraph_style">uses Common, QuickDrawII, EventMgr, MscToolSet;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">type<br /></p>
+                <p class="paragraph_style">  Fire = Object<br /></p>
+                <p class="paragraph_style">    x, y, xdir, ydir: Integer;<br /></p>
+                <p class="paragraph_style">    procedure setup(startX, startY: Integer);<br /></p>
+                <p class="paragraph_style">    procedure move;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  i, j, k, x, y, color: Integer;<br /></p>
+                <p class="paragraph_style">  tick: LongInt;<br /></p>
+                <p class="paragraph_style">  fires: Array[0..30] of Fire;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure Fire.setup;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  x := startX; <br /></p>
+                <p class="paragraph_style">  y := startY;<br /></p>
+                <p class="paragraph_style">  xdir := randomInteger mod 8 - 4;<br /></p>
+                <p class="paragraph_style">  ydir := randomInteger mod 8 - 4; <br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure Fire.move;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(black);<br /></p>
+                <p class="paragraph_style">  moveTo(x, y);<br /></p>
+                <p class="paragraph_style">  line(0, 0);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  x := x + xdir;<br /></p>
+                <p class="paragraph_style">  y := y + ydir;<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(color);<br /></p>
+                <p class="paragraph_style">  moveTo(x, y);<br /></p>
+                <p class="paragraph_style">  line(0, 0);<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  startDesk(320);<br /></p>
+                <p class="paragraph_style">  clearScreen(black);<br /></p>
+                <p class="paragraph_style">  hideCursor;<br /></p>
+                <p class="paragraph_style">  tick := getTick;<br /></p>
+                <p class="paragraph_style">  setRandSeed(tick);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  while true do begin<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    { Setup fire }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    setPenSize(1, 1);<br /></p>
+                <p class="paragraph_style">    color := randomInteger mod 15 + 1;<br /></p>
+                <p class="paragraph_style">    x := randomInteger mod 320;<br /></p>
+                <p class="paragraph_style">    y := randomInteger mod 100 + 50;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    for i := 0 to 30 do begin<br /></p>
+                <p class="paragraph_style">      new(fires[i]);<br /></p>
+                <p class="paragraph_style">      fires[i].setup(x, y);<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    { Draw fire }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    for i := 1 to 30 do begin<br /></p>
+                <p class="paragraph_style">      setSolidPenPat(black);<br /></p>
+                <p class="paragraph_style">      moveTo((i - 1) * x div 30, <br /></p>
+                <p class="paragraph_style">        (i - 1) * y div 30);<br /></p>
+                <p class="paragraph_style">      line(0, 0);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      setSolidPenPat(color);<br /></p>
+                <p class="paragraph_style">      moveTo(i * x div 30, i * y div 30);<br /></p>
+                <p class="paragraph_style">      line(0, 0);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      repeat until getTick - tick &gt; 1;<br /></p>
+                <p class="paragraph_style">      tick := getTick;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    { Draw firework }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    for i := 1 to 30 do begin<br /></p>
+                <p class="paragraph_style">      for j := 0 to 30 do begin<br /></p>
+                <p class="paragraph_style">        setPenSize(i div 15 + 1, i div 15 + 1);<br /></p>
+                <p class="paragraph_style">        fires[j].move;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">        if button(0) then begin<br /></p>
+                <p class="paragraph_style">          for k := 0 to 30 do<br /></p>
+                <p class="paragraph_style">            dispose(fires[i]);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">          endDesk;<br /></p>
+                <p class="paragraph_style">          halt(0);<br /></p>
+                <p class="paragraph_style">        end;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      repeat until getTick &gt; tick;<br /></p>
+                <p class="paragraph_style">      tick := tick + 1;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    clearScreen(black);<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style">end.</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div id="id2" style="height: 732px; left: 0px; position: absolute; top: 252px; width: 320px; z-index: 1; " class="style_SkipStroke_2">
+            <div class="text-content graphic_textbox_layout_style_default_External_320_732" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-top: 0pt; " class="paragraph_style_1">Orca/Pascal version, written using Object Pascal to demonstrate object oriented programming.<br /></p>
+                <p class="paragraph_style_1"><br /></p>
+                <p class="paragraph_style_1">GSoft BASIC comparison:<br /></p>
+                <p class="paragraph_style_2">      TYPE FIRE<br /></p>
+                <p class="paragraph_style_2">        X AS INTEGER<br /></p>
+                <p class="paragraph_style_2">        Y AS INTEGER<br /></p>
+                <p class="paragraph_style_2">        XDIR AS INTEGER<br /></p>
+                <p class="paragraph_style_2">        YDIR AS INTEGER<br /></p>
+                <p class="paragraph_style_2">      END TYPE<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">      DIM FIRES(30) AS FIRE<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">      TICK = GETTICK<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">      DO<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">        ! Setup Firework<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">        X = RND (1) * 320<br /></p>
+                <p class="paragraph_style_2">        Y = RND (1) * 100 + 50<br /></p>
+                <p class="paragraph_style_2">        COLOR = RND (1) * 15 + 1<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">        HGR<br /></p>
+                <p class="paragraph_style_2">        FOR I = 1 TO 30<br /></p>
+                <p class="paragraph_style_2">          FIRES(I).X = X<br /></p>
+                <p class="paragraph_style_2">          FIRES(I).Y = Y<br /></p>
+                <p class="paragraph_style_2">          FIRES(I).XDIR = RND (1) * 8 - 4<br /></p>
+                <p class="paragraph_style_2">          FIRES(I).YDIR = RND (1) * 8 - 4<br /></p>
+                <p class="paragraph_style_2">        NEXT<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">        ! Shoot fire<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">        FOR I = 1 TO 30<br /></p>
+                <p class="paragraph_style_2">          HCOLOR= 0<br /></p>
+                <p class="paragraph_style_2">          HPLOT (I - 1) * X / 30, (I - 1) * Y / 30<br /></p>
+                <p class="paragraph_style_2">          HCOLOR= COLOR<br /></p>
+                <p class="paragraph_style_2">          HPLOT I * X / 30, I * Y / 30<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">          DO UNTIL GETTICK - TICK &gt; 1<br /></p>
+                <p class="paragraph_style_2">          LOOP<br /></p>
+                <p class="paragraph_style_2">          TICK = GETTICK<br /></p>
+                <p class="paragraph_style_2">        NEXT<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">        ! Draw firework<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">        FOR I = 1 TO 30<br /></p>
+                <p class="paragraph_style_2">          FOR J = 1 TO 30<br /></p>
+                <p class="paragraph_style_2">            HCOLOR= 0<br /></p>
+                <p class="paragraph_style_2">            HPLOT FIRES(J).X, FIRES(J).Y<br /></p>
+                <p class="paragraph_style_2"><br /></p>
+                <p class="paragraph_style_2">            FIRES(J).X = FIRES(J).X + FIRES(J).XDIR<br /></p>
+                <p class="paragraph_style_2">            FIRES(J).Y = FIRES(J).Y + FIRES(J).YDIR<br /></p>
+                <p class="paragraph_style_2">            HCOLOR= COLOR<br /></p>
+                <p class="paragraph_style_2">            HPLOT FIRES(J).X, FIRES(J).Y<br /></p>
+                <p class="paragraph_style_2">          NEXT<br /></p>
+                <p class="paragraph_style_2">        NEXT<br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style_2">      LOOP</p>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript"><!--
+writeMovie1();
+--></script>
+          
+
+
+          <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 0px; line-height: 0px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

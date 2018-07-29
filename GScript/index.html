@@ -1,0 +1,13 @@
+<html>
+  	<head><title>GScript</title></head>
+	<script>
+		var agent = navigator.userAgent;
+	
+		if (agent.indexOf("iPhone") > 0 || agent.indexOf("iPod") > 0)
+			window.location.href = "/iPhone/index.html";
+	</script>
+	<frameset cols="120, *" border=0>
+ 		<frame name="menu" scrolling="no" frameborder=0 src="menu.html">
+ 		<frame name="demo" src="home.html" frameborder=0>
+	</frameset>
+</html>

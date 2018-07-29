@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20090201" />
+    <meta name="viewport" content="width=700" />
+    <title>Invader War
+</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="Invader_War_files/Invader_War.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='Invader_War_files/Invader_WarIE.css'/><![endif]-->
+    <script type="text/javascript" src="Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="Scripts/iWebImage.js"></script>
+    <script type="text/javascript" src="Invader_War_files/Invader_War.js"></script>
+  </head>
+  <body style="background: #ffffff; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 10px; margin-left: auto; margin-right: auto; margin-top: 10px; overflow: hidden; position: relative; word-wrap: break-word;  background: #ffffff; text-align: left; width: 700px; " id="body_content">
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 20px; margin-top: 0px; position: relative; width: 660px; z-index: 1; ">
+    
+            <div id="widget0-navbar" class="navbar">
+
+      
+              <div id="widget0-bg" class="navbar-bg">
+
+        
+                <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                
+      
+</div>
+              
+    
+</div>
+          </div>
+          <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', 'Scripts/Widgets/Navbar', 'Scripts/Widgets/SharedResources', '.', {"current-page-GUID": "3CDA4626-7A43-469F-94D5-0C805EF22ABF", "path-to-root": "", "isCollectionPage": "NO", "navbar-css": ".navbar {\n\tfont-family: 'Helvetica Neue', Arial, sans-serif;\n\tfont-size: .8em;\n\tcolor: #666666;\n\tline-height: 30px;\n\tborder-bottom: 3px solid #ccc;\n}\n\n.navbar-bg {\n\ttext-align: right;}\n\n.navbar-bg ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n\nli {\n\tlist-style-type: none;\n\tdisplay: inline;\n\tpadding: 0px 5px 0px 0px;\n}\n\n\nli a {\n\ttext-decoration: none;\n\tpadding: 10px;\n\tcolor: #666666;\n\tfont-weight: bold;\n}\n\nli a:visited {\n\ttext-decoration: none;\n\tpadding: 10px;\n\tcolor: #666666;\n\tfont-weight: bold;\n}\n\nli a:hover\r{\r\n \tcolor: #999999;\n\ttext-decoration: none;\r}\n\n\nli.current-page a\r{\r\t color: #66ABC5;\n\ttext-decoration: none;\r}"});
+//--><!]]></script>
+          <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 87px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div id="id1" style="height: 87px; left: 20px; position: absolute; top: 0px; width: 515px; z-index: 1; " class="style_SkipStroke">
+            <div class="text-content style_External_515_87" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-top: 0pt; " class="Header">Invader War<br /></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+          <div style="margin-left: 350px; margin-top: 21px; position: relative; width: 330px; z-index: 1; " class="style_SkipStroke_1 flowDefining">
+            <div class="text-content style_External_330_3874" style="padding: 0px; ">
+              <div class="style_1">
+                <p style="padding-top: 0pt; " class="paragraph_style">program InvaderWar;<br /></p>
+                <p class="paragraph_style">uses Common,QuickDrawII,EventMgr,MscToolSet;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">type<br /></p>
+                <p class="paragraph_style">  star = object<br /></p>
+                <p class="paragraph_style">    x,y,speed : integer;<br /></p>
+                <p class="paragraph_style">    procedure setup;<br /></p>
+                <p class="paragraph_style">    procedure draw;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  invader = object<br /></p>
+                <p class="paragraph_style">    x,y,bx,by,speed : integer;<br /></p>
+                <p class="paragraph_style">    fshoot : boolean;<br /></p>
+                <p class="paragraph_style">    procedure setup;<br /></p>
+                <p class="paragraph_style">    procedure draw;<br /></p>
+                <p class="paragraph_style">    procedure bang;<br /></p>
+                <p class="paragraph_style">    procedure fire;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  i,posX,posY,etypes,bulletX,bulletY,score:<br /></p>
+                <p class="paragraph_style">    integer;<br /></p>
+                <p class="paragraph_style">  stars: array[1..10]of star;<br /></p>
+                <p class="paragraph_style">  invaders: array[1..5]of invader;<br /></p>
+                <p class="paragraph_style">  tick,key: longInt;<br /></p>
+                <p class="paragraph_style">  event: eventRecord;<br /></p>
+                <p class="paragraph_style">  shippoly,fire: polyHandle;<br /></p>
+                <p class="paragraph_style">  gameOver,shoot: boolean;<br /></p>
+                <p class="paragraph_style">  str: string;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">procedure explode;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  a,ex,ey : integer;<br /></p>
+                <p class="paragraph_style">  r : rect;<br /></p>
+                <p class="paragraph_style">  str : string;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  sysBeep;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  for a := 1 to 15 do begin<br /></p>
+                <p class="paragraph_style">    setSolidPenPat(a);<br /></p>
+                <p class="paragraph_style">    ex := randomInteger mod 20 + (posX - 30);<br /></p>
+                <p class="paragraph_style">    ey := randomInteger mod 20 + (posY - 20);<br /></p>
+                <p class="paragraph_style">    setRect(r,ex,ey,ex + 20, ey + 20);<br /></p>
+                <p class="paragraph_style">    paintOval(r);<br /></p>
+                <p class="paragraph_style">    tick := getTick;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    repeat until getTick - tick &gt; 1;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  moveTo(75,100);<br /></p>
+                <p class="paragraph_style">  str := concat('Game Over. Score:',<br /></p>
+                <p class="paragraph_style">    cnvis(score));<br /></p>
+                <p class="paragraph_style">  drawString(str);<br /></p>
+                <p class="paragraph_style">  repeat until button(0);<br /></p>
+                <p class="paragraph_style">  gameOver := true;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">procedure drawShip;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  mouse : point;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(0);<br /></p>
+                <p class="paragraph_style">  paintPoly(shippoly);<br /></p>
+                <p class="paragraph_style">  paintPoly(fire);<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  getMouse(mouse);<br /></p>
+                <p class="paragraph_style">  posX := mouse.h;<br /></p>
+                <p class="paragraph_style">  posY := mouse.v;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  if posX &lt; 20 then posX := 20;<br /></p>
+                <p class="paragraph_style">  if posY &lt; 20 then posY := 20;<br /></p>
+                <p class="paragraph_style">  if posY &gt; 195 then posY := 195;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  shippoly := openPoly;<br /></p>
+                <p class="paragraph_style">    moveTo(posX,posY);<br /></p>
+                <p class="paragraph_style">    lineTo(posX-20,posY-7);<br /></p>
+                <p class="paragraph_style">    line(0,14);<br /></p>
+                <p class="paragraph_style">    lineTo(posX,posY);<br /></p>
+                <p class="paragraph_style">  closePoly;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  setSolidPenPat(7);<br /></p>
+                <p class="paragraph_style">  paintPoly(shippoly);<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  fire := openPoly;<br /></p>
+                <p class="paragraph_style">    moveTo(posX-20,posY-7);<br /></p>
+                <p class="paragraph_style">    line(0,14);<br /></p>
+                <p class="paragraph_style">    lineTo(posX-25,posY);<br /></p>
+                <p class="paragraph_style">    lineTo(posX-20,posY-7);<br /></p>
+                <p class="paragraph_style">  closePoly;<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(randomInteger mod 2 * 6);<br /></p>
+                <p class="paragraph_style">  paintPoly(fire);   <br /></p>
+                <p class="paragraph_style">end;            <br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure bangShip;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  i: integer;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  for i := 1 to 15 do<br /></p>
+                <p class="paragraph_style">    if (invaders[i].x &lt; posX) and <br /></p>
+                <p class="paragraph_style">      (invaders[i].x &gt; posX - 35) and<br /></p>
+                <p class="paragraph_style">      (invaders[i].y &lt; posY + 7) and<br /></p>
+                <p class="paragraph_style">      (invaders[i].y &gt; posY - 12) then explode;<br /></p>
+                <p class="paragraph_style">end;    <br /></p>
+                <p class="paragraph_style">            <br /></p>
+                <p class="paragraph_style">procedure invader.setup;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  x := randomInteger mod 100 + 220;<br /></p>
+                <p class="paragraph_style">  y := randomInteger mod 185 + 15;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure invader.draw;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  r: Rect;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  speed := randomInteger mod 3 + 1;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  setSolidPenPat(0);<br /></p>
+                <p class="paragraph_style">  setRect(r,x,y,x+15,y+10);<br /></p>
+                <p class="paragraph_style">  paintOval(r);<br /></p>
+                <p class="paragraph_style">  moveTo(x + 5,y);<br /></p>
+                <p class="paragraph_style">  line(10,0);<br /></p>
+                <p class="paragraph_style">  moveTo(x + 5,y + 10);<br /></p>
+                <p class="paragraph_style">  line(10,0);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  x := x - speed;<br /></p>
+                <p class="paragraph_style">  if posY &lt; y + 2 then y := y - 1;<br /></p>
+                <p class="paragraph_style">  if posY &gt; y then y := y + 1;<br /></p>
+                <p class="paragraph_style">        <br /></p>
+                <p class="paragraph_style">  if x &lt; 0 then begin<br /></p>
+                <p class="paragraph_style">    x := 320;<br /></p>
+                <p class="paragraph_style">    y := randomInteger mod 200;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  setSolidPenPat(11);<br /></p>
+                <p class="paragraph_style">  setRect(r,x,y,x+15,y+10);<br /></p>
+                <p class="paragraph_style">  paintOval(r);<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(6);<br /></p>
+                <p class="paragraph_style">  moveTo(x + 5,y);<br /></p>
+                <p class="paragraph_style">  line(10,0);<br /></p>
+                <p class="paragraph_style">  moveTo(x + 5,y + 10);<br /></p>
+                <p class="paragraph_style">  line(10,0);    <br /></p>
+                <p class="paragraph_style">end;    <br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure invader.bang;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  r: Rect;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  if shoot then begin<br /></p>
+                <p class="paragraph_style">    setSolidPenPat(0);<br /></p>
+                <p class="paragraph_style">    moveTo(bulletX,bulletY);<br /></p>
+                <p class="paragraph_style">    line(-10,0);<br /></p>
+                <p class="paragraph_style">    bulletX := bulletX + 3;<br /></p>
+                <p class="paragraph_style">    setSolidPenPat(10);<br /></p>
+                <p class="paragraph_style">    moveTo(bulletX,bulletY);<br /></p>
+                <p class="paragraph_style">    line(-10,0);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    if (bulletY &gt; y - 2) and (bulletY &lt; y + 12)<br /></p>
+                <p class="paragraph_style">      and (bulletX &gt; x - 1)<br /></p>
+                <p class="paragraph_style">      and (bulletX &lt; x + 16) then begin<br /></p>
+                <p class="paragraph_style">      setSolidPenPat(15);<br /></p>
+                <p class="paragraph_style">      setRect(r,x-10,y-10,x+20,y+20);<br /></p>
+                <p class="paragraph_style">      paintOval(r);<br /></p>
+                <p class="paragraph_style">      score := score + (320 - (x - posX)) div 10;            <br /></p>
+                <p class="paragraph_style">      tick := getTick;<br /></p>
+                <p class="paragraph_style">      repeat until getTick - tick &gt; 5;<br /></p>
+                <p class="paragraph_style">            <br /></p>
+                <p class="paragraph_style">      setSolidPenPat(0);<br /></p>
+                <p class="paragraph_style">      paintOval(r);<br /></p>
+                <p class="paragraph_style">                        <br /></p>
+                <p class="paragraph_style">      x := 320;<br /></p>
+                <p class="paragraph_style">      y := randomInteger mod 200;<br /></p>
+                <p class="paragraph_style">      moveTo(bulletX,bulletY);<br /></p>
+                <p class="paragraph_style">      line(-5,0);<br /></p>
+                <p class="paragraph_style">      shoot := false;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    if bulletX &gt; 330 then shoot := false;  <br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">end;        <br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure invader.fire;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  if fshoot then begin<br /></p>
+                <p class="paragraph_style">    setSolidPenPat(0);<br /></p>
+                <p class="paragraph_style">    moveTo(bx,by);<br /></p>
+                <p class="paragraph_style">    line(5,0);<br /></p>
+                <p class="paragraph_style">    bx := bx - 5;<br /></p>
+                <p class="paragraph_style">    setSolidPenPat(14);<br /></p>
+                <p class="paragraph_style">    moveTo(bx,by);<br /></p>
+                <p class="paragraph_style">    line(5,0);<br /></p>
+                <p class="paragraph_style">    if (bx &lt; posX) and (bx &gt; posX - 25) and <br /></p>
+                <p class="paragraph_style">      (by &lt; posY + 5) and (by &gt; posY - 5) then<br /></p>
+                <p class="paragraph_style">      explode;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    if bx &lt; -5 then fshoot := false;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  if not fshoot then begin<br /></p>
+                <p class="paragraph_style">    if (y + 3 &gt; posY - 5) and (y + 3 &lt; posY + 5)<br /></p>
+                <p class="paragraph_style">      then begin<br /></p>
+                <p class="paragraph_style">      bx := x;<br /></p>
+                <p class="paragraph_style">      by := y + 3;<br /></p>
+                <p class="paragraph_style">      fshoot := true;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">end;        <br /></p>
+                <p class="paragraph_style">                                            <br /></p>
+                <p class="paragraph_style">procedure star.setup;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  x := randomInteger mod 320;<br /></p>
+                <p class="paragraph_style">  y := randomInteger mod 185 + 15;<br /></p>
+                <p class="paragraph_style">  speed := randomInteger mod 6 + 1;<br /></p>
+                <p class="paragraph_style">end;    <br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure star.draw;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(0);<br /></p>
+                <p class="paragraph_style">  moveTo(x,y);<br /></p>
+                <p class="paragraph_style">  line(0,0);<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  x := x - speed;<br /></p>
+                <p class="paragraph_style">  if x &lt; 0 then begin<br /></p>
+                <p class="paragraph_style">    x := 320;<br /></p>
+                <p class="paragraph_style">    speed := randomInteger mod 6 + 1;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  setSolidPenPat(i);<br /></p>
+                <p class="paragraph_style">  moveTo(x,y);  <br /></p>
+                <p class="paragraph_style">  line(0,0);<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  etypes := keyDownMask + mDownMask;<br /></p>
+                <p class="paragraph_style">  tick := getTick;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  startDesk(320);<br /></p>
+                <p class="paragraph_style">  hideCursor;<br /></p>
+                <p class="paragraph_style">  clearScreen(0);<br /></p>
+                <p class="paragraph_style">  setForeColor(9);<br /></p>
+                <p class="paragraph_style">  setBackColor(0);<br /></p>
+                <p class="paragraph_style">  setRandSeed(tick);<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  for i := 1 to 10 do begin<br /></p>
+                <p class="paragraph_style">    new(stars[i]);<br /></p>
+                <p class="paragraph_style">    stars[i].setup;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  for i := 1 to 5 do begin<br /></p>
+                <p class="paragraph_style">    new(invaders[i]);<br /></p>
+                <p class="paragraph_style">    invaders[i].setup;<br /></p>
+                <p class="paragraph_style">  end;    <br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  repeat<br /></p>
+                <p class="paragraph_style">    for i := 1 to 10 do stars[i].draw;          <br /></p>
+                <p class="paragraph_style">      for i := 1 to 5 do invaders[i].draw;<br /></p>
+                <p class="paragraph_style">      for i := 1 to 5 do invaders[i].bang;<br /></p>
+                <p class="paragraph_style">      for i := 1 to 5 do invaders[i].fire;<br /></p>
+                <p class="paragraph_style">        <br /></p>
+                <p class="paragraph_style">      drawShip;<br /></p>
+                <p class="paragraph_style">      bangShip;      <br /></p>
+                <p class="paragraph_style">                        <br /></p>
+                <p class="paragraph_style">      if getNextEvent(etypes,event) then begin<br /></p>
+                <p class="paragraph_style">        case event.eventWhat of<br /></p>
+                <p class="paragraph_style">          keyDownEvt: begin<br /></p>
+                <p class="paragraph_style">            key := event.eventMessage;        <br /></p>
+                <p class="paragraph_style">            if key = 27 then <br /></p>
+                <p class="paragraph_style">              gameOver := true;<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">          mouseDownEvt: begin<br /></p>
+                <p class="paragraph_style">            if not shoot then begin<br /></p>
+                <p class="paragraph_style">              shoot := true;<br /></p>
+                <p class="paragraph_style">              bulletX := posX;<br /></p>
+                <p class="paragraph_style">              bulletY := posY;<br /></p>
+                <p class="paragraph_style">            end;<br /></p>
+                <p class="paragraph_style">          end;                             <br /></p>
+                <p class="paragraph_style">        end;    <br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">      moveTo(10,10);<br /></p>
+                <p class="paragraph_style">      str := concat('Score: ',cnvis(score));<br /></p>
+                <p class="paragraph_style">      drawString(str);    <br /></p>
+                <p class="paragraph_style">      repeat until getTick &gt; tick;<br /></p>
+                <p class="paragraph_style">      tick := tick + 1;<br /></p>
+                <p class="paragraph_style">    until gameOver;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    for i := 1 to 15 do<br /></p>
+                <p class="paragraph_style">      dispose(stars[i]);<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">    for i := 1 to 5 do<br /></p>
+                <p class="paragraph_style">      dispose(invaders[i]);<br /></p>
+                <p class="paragraph_style">  endDesk;<br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style">end.</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 187px; width: 300px;  height: 187px; left: 20px; position: absolute; top: 22px; width: 300px; z-index: 1; " class="tinyText style_SkipStroke_2 shadow_0">
+            <img src="Invader_War_files/Invader.jpg" alt="" style="border: none; height: 188px; width: 300px; " />
+          </div>
+          
+
+
+          <div id="id2" style="height: 149px; left: 20px; position: absolute; top: 242px; width: 300px; z-index: 1; " class="style_SkipStroke_3">
+            <div class="text-content graphic_textbox_layout_style_default_External_300_149" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-top: 0pt; " class="Free_Form">Ding Wen first space game for Apple IIGS.<br /></p>
+                <p class="Free_Form"><br /></p>
+                <p class="Free_Form">This program is written using Orca/Pascal, an <span class="style_2">Object Oriented language for Apple IIGS.<br /></span></p>
+                <p class="Free_Form"><span class="style_2"><br /></span></p>
+                <p class="Free_Form"><span class="style_2"><br /></span></p>
+                <p class="Free_Form"><span class="style_2"><br /></span></p>
+                <p style="padding-bottom: 0pt; " class="Free_Form">Invader War is currently on development as an iPhone application and will available for download via App Store when it is completed.</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 200px; width: 300px;  height: 200px; left: 20px; position: absolute; top: 399px; width: 300px; z-index: 1; " class="tinyText style_SkipStroke_4 shadow_1">
+            <img src="Invader_War_files/InvaderWar.png" alt="" style="border: none; height: 200px; width: 300px; " />
+          </div>
+          <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 0px; line-height: 0px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20081101" />
+    <meta name="viewport" content="width=700" />
+    <title>Mandelbrot GS</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="Mandelbrot_GS_files/Mandelbrot_GS.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='Mandelbrot_GS_files/Mandelbrot_GSIE.css'/><![endif]-->
+    <script type="text/javascript" src="Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="Scripts/iWebImage.js"></script>
+    <script type="text/javascript" src="Mandelbrot_GS_files/Mandelbrot_GS.js"></script>
+  </head>
+  <body style="background: #ffffff; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 0px; margin-left: auto; margin-right: auto; margin-top: 0px; overflow: hidden; position: relative; word-wrap: break-word;  background: #ffffff; text-align: left; width: 700px; " id="body_content">
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 35px; margin-top: 0px; position: relative; width: 630px; z-index: 1; ">
+    
+            <div id="widget0-navbar" class="navbar">
+
+      
+              <div id="widget0-bg" class="navbar-bg">
+
+        
+                <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                
+      
+</div>
+              
+    
+</div>
+          </div>
+          <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', 'Scripts/Widgets/Navbar', 'Scripts/Widgets/SharedResources', '.', {"current-page-GUID": "7700D5FE-9CB0-4008-82DB-BD1738C4981B", "path-to-root": "", "isCollectionPage": "NO", "navbar-css": ".navbar {\n\tfont-family: Arial, sans-serif;\n\tfont-size: 1em;\n\tcolor: #666;\n\tmargin: 9px 0px 6px 0px;\n\tline-height: 30px;\n}\n\n.navbar-bg {\n\ttext-align: center;\n}\n\n.navbar-bg ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n\nli {\n\tlist-style-type: none;\n\tdisplay: inline;\n\tpadding: 0px 10px 0px 10px;\n}\n\n\nli a {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:visited {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:hover\r{\r\n \tcolor: #463C3C;\n\ttext-decoration: none;\r}\n\n\nli.current-page a\r{\r\t color: #463C3C;\n\ttext-decoration: none;\n\tfont-weight: bold;\r\r}"});
+//--><!]]></script>
+          <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 73px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div id="id1" style="height: 50px; left: 35px; position: absolute; top: 23px; width: 630px; z-index: 1; " class="style_SkipStroke">
+            <div class="text-content style_External_630_50" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header">Mandelbrot GS</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 1px; width: 630px;  height: 0px; left: 35px; position: absolute; top: 3px; width: 630px; z-index: 1; " class="tinyText">
+            <div style="position: relative; width: 630px; ">
+              <img src="Mandelbrot_GS_files/shapeimage_1.jpg" alt="" style="height: 1px; left: 0px; position: absolute; top: 0px; width: 630px; " />
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+          <div style="margin-left: 340px; margin-top: 31px; position: relative; width: 360px; z-index: 1; " class="style_SkipStroke_1 flowDefining">
+            <div class="text-content style_External_360_5364" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-top: 0pt; " class="paragraph_style">program Mandelbrot;<br /></p>
+                <p class="paragraph_style">uses Types, QuickDraw, Events;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">const<br /></p>
+                <p class="paragraph_style">  size = 100000000;<br /></p>
+                <p class="paragraph_style">  max = 400000000;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">type<br /></p>
+                <p class="paragraph_style">  colourMode = (defaultMode, repeatMode, rangeMode, beautyMode);<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  key, n: integer;<br /></p>
+                <p class="paragraph_style">  mode: colourMode;<br /></p>
+                <p class="paragraph_style">  cursorOn, graphOn: boolean;<br /></p>
+                <p class="paragraph_style">  event: eventRecord; <br /></p>
+                <p class="paragraph_style">  tempPalette: array [1..15] of integer;<br /></p>
+                <p class="paragraph_style">  colourTable: array [0..999] of integer;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure ProcessEvent(static rStart, iStart, increment: extended;<br /></p>
+                <p class="paragraph_style">  iteration: integer; mirror: boolean); forward;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure SetColourTable(iteration: integer);<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  case mode of<br /></p>
+                <p class="paragraph_style">    defaultMode:  <br /></p>
+                <p class="paragraph_style">      for n := 0 to (iteration - 1) do<br /></p>
+                <p class="paragraph_style">        colourTable[n] := ((n * 30) div iteration) mod 15 + 1;<br /></p>
+                <p class="paragraph_style">    repeatMode:<br /></p>
+                <p class="paragraph_style">      for n := 0 to (iteration - 1) do<br /></p>
+                <p class="paragraph_style">        colourTable[n] := n mod 15 + 1;<br /></p>
+                <p class="paragraph_style">    rangeMode:<br /></p>
+                <p class="paragraph_style">      for n := 0 to (iteration - 1) do<br /></p>
+                <p class="paragraph_style">        colourTable[n] := (n * 15) div iteration + 1;<br /></p>
+                <p class="paragraph_style">    beautyMode:<br /></p>
+                <p class="paragraph_style">      for n := 0 to 999 do<br /></p>
+                <p class="paragraph_style">        colourTable[n] := n mod 15 + 1;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure Paint (static rStart, iStart, increment: extended; iteration: integer; mirror: boolean);<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  x, y, n, sx, sy, cx, cy, yEnd, colour: integer;<br /></p>
+                <p class="paragraph_style">  r, i, zr, zi, zr2, zi2, dist, temp, rStartInt, iStartInt, incInt, <br /></p>
+                <p class="paragraph_style">    incStartInt: longInt;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  rStartInt := Round(rStart * size);<br /></p>
+                <p class="paragraph_style">  iStartInt := Round(iStart * size);<br /></p>
+                <p class="paragraph_style">  incStartInt := Round(increment * size);<br /></p>
+                <p class="paragraph_style">  incInt := incStartInt * 2;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  SetColourTable(iteration);<br /></p>
+                <p class="paragraph_style">  if mirror then yEnd := 49 <br /></p>
+                <p class="paragraph_style">  else yEnd := 99;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  for sx := 0 to 1 do<br /></p>
+                <p class="paragraph_style">    for sy := 0 to 1 do begin<br /></p>
+                <p class="paragraph_style">      i := iStartInt - incStartInt * sy;<br /></p>
+                <p class="paragraph_style">      temp := rStartInt + incStartInt * sx;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      for y := 0 to yEnd do begin<br /></p>
+                <p class="paragraph_style">        r := temp;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">        for x := 0 to 159 do begin<br /></p>
+                <p class="paragraph_style">          zr := 0;<br /></p>
+                <p class="paragraph_style">          zi := 0;<br /></p>
+                <p class="paragraph_style">          zr2 := 0;<br /></p>
+                <p class="paragraph_style">          zi2 := 0;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">          if GetNextEvent(EveryEvent, event) then <br /></p>
+                <p class="paragraph_style">            ProcessEvent(rStart, iStart, increment, iteration, mirror);<br /></p>
+                <p class="paragraph_style">            <br /></p>
+                <p class="paragraph_style">          for n := 1 to iteration do begin<br /></p>
+                <p class="paragraph_style">            zi := (2 * zr * zi + i) div 10000;<br /></p>
+                <p class="paragraph_style">            zr := (zr2 - zi2 + r) div 10000;<br /></p>
+                <p class="paragraph_style">            zr2 := zr * zr;<br /></p>
+                <p class="paragraph_style">            zi2 := zi * zi;<br /></p>
+                <p class="paragraph_style">            dist := abs(zr2 + zi2);<br /></p>
+                <p class="paragraph_style">        <br /></p>
+                <p class="paragraph_style">            if dist &gt; max then begin<br /></p>
+                <p class="paragraph_style">              if mode = beautyMode then<br /></p>
+                <p class="paragraph_style">                SetSolidPenPat(colourTable[dist div 100000000 + 1])<br /></p>
+                <p class="paragraph_style">              else <br /></p>
+                <p class="paragraph_style">                SetSolidPenPat(colourTable[n]);<br /></p>
+                <p class="paragraph_style">              <br /></p>
+                <p class="paragraph_style">              cx := x * 2 + sx;<br /></p>
+                <p class="paragraph_style">              cy := y * 2 + sy;<br /></p>
+                <p class="paragraph_style">              MoveTo(cx, cy);<br /></p>
+                <p class="paragraph_style">              Line(0, 0);<br /></p>
+                <p class="paragraph_style">              <br /></p>
+                <p class="paragraph_style">              if mirror then begin<br /></p>
+                <p class="paragraph_style">                MoveTo(cx, 199 - cy);<br /></p>
+                <p class="paragraph_style">                Line(0, 0);<br /></p>
+                <p class="paragraph_style">              end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">              Leave;<br /></p>
+                <p class="paragraph_style">                end;<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">          <br /></p>
+                <p class="paragraph_style">          r := r + incInt;<br /></p>
+                <p class="paragraph_style">        end;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">        i := i - incInt;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  graphOn := true;<br /></p>
+                <p class="paragraph_style">  GrafOn;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  while true do<br /></p>
+                <p class="paragraph_style">    if GetNextEvent(EveryEvent, event) then <br /></p>
+                <p class="paragraph_style">      ProcessEvent(rStart, iStart, increment, iteration, mirror);<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure ProcessEvent(static rStart, iStart, increment: extended;<br /></p>
+                <p class="paragraph_style">  iteration: integer; mirror: boolean);<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  nextIteration, time, temp, dir: integer;<br /></p>
+                <p class="paragraph_style">  loc: point;<br /></p>
+                <p class="paragraph_style">  box: rect;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  case event.what of <br /></p>
+                <p class="paragraph_style">    KeyDownEvt: begin<br /></p>
+                <p class="paragraph_style">      key := event.message;<br /></p>
+                <p class="paragraph_style">      case key of<br /></p>
+                <p class="paragraph_style">        8:  if mode &lt;&gt; defaultMode then begin<br /></p>
+                <p class="paragraph_style">            mode := defaultMode;<br /></p>
+                <p class="paragraph_style">            Paint(rStart, iStart, increment, iteration, mirror);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        9:  begin<br /></p>
+                <p class="paragraph_style">          time := 5000;<br /></p>
+                <p class="paragraph_style">          for n := 1 to 15 do<br /></p>
+                <p class="paragraph_style">            tempPalette[n] := GetColorEntry(0, n);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">          while true do begin<br /></p>
+                <p class="paragraph_style">            if dir &gt; 0 then begin<br /></p>
+                <p class="paragraph_style">              temp := GetColorEntry(0, 15);<br /></p>
+                <p class="paragraph_style">              for n := 14 downto 1 do<br /></p>
+                <p class="paragraph_style">                SetColorEntry(0, n + 1, GetColorEntry(0, n));<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, 1, temp);<br /></p>
+                <p class="paragraph_style">            end<br /></p>
+                <p class="paragraph_style">            else<br /></p>
+                <p class="paragraph_style">            begin<br /></p>
+                <p class="paragraph_style">              temp := GetColorEntry(0, 1);<br /></p>
+                <p class="paragraph_style">              for n := 1 to 14 do<br /></p>
+                <p class="paragraph_style">                SetColorEntry(0, n, GetColorEntry(0, n + 1));<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, 15, temp);<br /></p>
+                <p class="paragraph_style">            end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">            for n := 1 to time do;<br /></p>
+                <p class="paragraph_style">            <br /></p>
+                <p class="paragraph_style">            if GetNextEvent(EveryEvent, event) then <br /></p>
+                <p class="paragraph_style">              case event.what of <br /></p>
+                <p class="paragraph_style">                KeyDownEvt:<br /></p>
+                <p class="paragraph_style">                begin<br /></p>
+                <p class="paragraph_style">                  key := event.message;<br /></p>
+                <p class="paragraph_style">                  if key = 9 then<br /></p>
+                <p class="paragraph_style">                    if dir &gt; 0 then dir := 0<br /></p>
+                <p class="paragraph_style">                    else dir := 1<br /></p>
+                <p class="paragraph_style">                  else <br /></p>
+                <p class="paragraph_style">                    if key = 48 then time := 0<br /></p>
+                <p class="paragraph_style">                  else <br /></p>
+                <p class="paragraph_style">                    if (key &gt; 48) and (key &lt; 58) then<br /></p>
+                <p class="paragraph_style">                      time := (58 - key) * 1000<br /></p>
+                <p class="paragraph_style">                  else begin<br /></p>
+                <p class="paragraph_style">                    for n := 1 to 15 do<br /></p>
+                <p class="paragraph_style">                      SetColorEntry(0, n, tempPalette[n]);<br /></p>
+                <p class="paragraph_style">                    Leave;<br /></p>
+                <p class="paragraph_style">                  end;<br /></p>
+                <p class="paragraph_style">                end;<br /></p>
+                <p class="paragraph_style">              end;<br /></p>
+                <p class="paragraph_style">            end;<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        10: if mode &lt;&gt; rangeMode then begin<br /></p>
+                <p class="paragraph_style">            mode := rangeMode;<br /></p>
+                <p class="paragraph_style">            Paint(rStart, iStart, increment, iteration, mirror);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        11: if mode &lt;&gt; beautyMode then begin<br /></p>
+                <p class="paragraph_style">            mode := beautyMode;<br /></p>
+                <p class="paragraph_style">            Paint(rStart, iStart, increment, iteration, mirror);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        13: if cursorOn then begin<br /></p>
+                <p class="paragraph_style">            HideCursor;<br /></p>
+                <p class="paragraph_style">            cursorOn := false;<br /></p>
+                <p class="paragraph_style">          end<br /></p>
+                <p class="paragraph_style">          else begin<br /></p>
+                <p class="paragraph_style">            ShowCursor;<br /></p>
+                <p class="paragraph_style">            cursorOn := true;<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        21: if mode &lt;&gt; repeatMode then begin<br /></p>
+                <p class="paragraph_style">            mode := repeatMode;<br /></p>
+                <p class="paragraph_style">            Paint(rStart, iStart, increment, iteration, mirror);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        27: Halt;<br /></p>
+                <p class="paragraph_style">        32: begin<br /></p>
+                <p class="paragraph_style">            ClearScreen(Black);<br /></p>
+                <p class="paragraph_style">            Paint(-2.6, 1.2, 0.012, 30, true);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        48: begin<br /></p>
+                <p class="paragraph_style">            for n := 0 to 7 do<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, n * 2 + 1, 4095);<br /></p>
+                <p class="paragraph_style">            for n := 1 to 7 do<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, n * 2, 15);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        49: for n := 1 to 15 do<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n, 15 * n);<br /></p>
+                <p class="paragraph_style">        50: begin<br /></p>
+                <p class="paragraph_style">            for n := 1 to 8 do<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, n, (n * 2 - 1) * 256 + 240);<br /></p>
+                <p class="paragraph_style">            for n := 9 to 15 do<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, n, 4080 - (n - 8) * 32);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        51: begin<br /></p>
+                <p class="paragraph_style">            for n := 1 to 8 do<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, n, 7 + n);<br /></p>
+                <p class="paragraph_style">            for n := 9 to 15 do<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, n, (n - 8) * 32 + 15);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        52: begin<br /></p>
+                <p class="paragraph_style">            for n := 1 to 8 do<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, n, (7 + n) * 256);<br /></p>
+                <p class="paragraph_style">            for n := 9 to 15 do<br /></p>
+                <p class="paragraph_style">              SetColorEntry(0, n, 3840 + 34 * (n - 8));<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        53: for n := 1 to 5 do begin<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n, n + 10);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n + 5, (n + 10) * 16);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n + 10, (n + 10) * 256);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        54: for n := 0 to 4 do begin<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n + 1, (15 - n * 3) * 16 + n * 3);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n + 6, (n * 3) * 256 + 15 - n * 3);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n + 11, (15 - n * 3) * 256 + (n * 3) * 16);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        55: for n := 0 to 4 do begin<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n + 1, 4095 - (15 - n * 3) * 16 - n * 3);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n + 6, 4095 - (n * 3) * 256 - (15 - n * 3));<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n + 11, 4095 - (15 - n * 3) * 256 - (n * 3) * 16);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        56: for n := 0 to 4 do begin<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n * 3 + 1, 3840);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n * 3 + 2, 240);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n * 3 + 3, 15);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        57: for n := 0 to 2 do begin<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n * 5 + 1, 2176 + (n + 1) * 544);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n * 5 + 2, 2056 + (n + 1) * 514);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n * 5 + 3, 136 + (n + 1) * 34);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n * 5 + 4, 128 + (n + 1) * 32);<br /></p>
+                <p class="paragraph_style">            SetColorEntry(0, n * 5 + 5, 8 + (n + 1) * 2); <br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        127: if graphOn then begin<br /></p>
+                <p class="paragraph_style">            GrafOff;<br /></p>
+                <p class="paragraph_style">            graphOn := false;<br /></p>
+                <p class="paragraph_style">          end<br /></p>
+                <p class="paragraph_style">          else begin<br /></p>
+                <p class="paragraph_style">              GrafOn;<br /></p>
+                <p class="paragraph_style">              graphOn := true;<br /></p>
+                <p class="paragraph_style">            end;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style">            <br /></p>
+                <p class="paragraph_style">    MouseDownEvt: begin<br /></p>
+                <p class="paragraph_style">      GetMouse(loc);<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">      if (loc.v &gt; 96) and (loc.v &lt; 103) then loc.v := 99;<br /></p>
+                <p class="paragraph_style">      SetRect(box, (loc.h - 32), (loc.v - 20), (loc.h + 32), (loc.v + 20));<br /></p>
+                <p class="paragraph_style">      InvertRect(box);<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">      while true do<br /></p>
+                <p class="paragraph_style">        if GetNextEvent(EveryEvent, event) then <br /></p>
+                <p class="paragraph_style">          case event.what of<br /></p>
+                <p class="paragraph_style">            MouseDownEvt: begin<br /></p>
+                <p class="paragraph_style">              ClearScreen(Black);<br /></p>
+                <p class="paragraph_style">              nextIteration := iteration * 2;<br /></p>
+                <p class="paragraph_style">              if nextIteration &gt; 1000 then nextIteration := 1000;<br /></p>
+                <p class="paragraph_style">                          <br /></p>
+                <p class="paragraph_style">              Paint(rStart + (loc.h - 32) * increment, <br /></p>
+                <p class="paragraph_style">                iStart - (loc.v - 20) * increment,<br /></p>
+                <p class="paragraph_style">                increment / 5, nextIteration, (loc.v = 99) and mirror);<br /></p>
+                <p class="paragraph_style">            end;<br /></p>
+                <p class="paragraph_style">            <br /></p>
+                <p class="paragraph_style">            KeyDownEvt: begin<br /></p>
+                <p class="paragraph_style">              InvertRect(box);<br /></p>
+                <p class="paragraph_style">              Leave;<br /></p>
+                <p class="paragraph_style">            end;<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  Graphics(320);<br /></p>
+                <p class="paragraph_style">  ClearScreen(Black);<br /></p>
+                <p class="paragraph_style">  SetPenSize(1, 1);<br /></p>
+                <p class="paragraph_style">  graphOn := true;<br /></p>
+                <p class="paragraph_style">  cursorOn := true;<br /></p>
+                <p class="paragraph_style">  mode := repeatMode;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">  for n := 1 to 15 do<br /></p>
+                <p class="paragraph_style">    SetColorEntry(0, n, 15 * n);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  MoveTo(0, 10);<br /></p>
+                <p class="paragraph_style">  Writeln(' Mandelbrot GS v1.1 ');<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  SetForeColor(1);<br /></p>
+                <p class="paragraph_style">  SetBackColor(Black);<br /></p>
+                <p class="paragraph_style">  MoveTo(185, 10);<br /></p>
+                <p class="paragraph_style">  Writeln('By Lim Thye Chean');<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  SetForeColor(13);<br /></p>
+                <p class="paragraph_style">  MoveTo(0, 25);  <br /></p>
+                <p class="paragraph_style">  Writeln('    &lt;Space&gt;: Return to first level');<br /></p>
+                <p class="paragraph_style">  Writeln('    &lt;Delete&gt;: Hide/Show screen');<br /></p>
+                <p class="paragraph_style">  Writeln('    &lt;Return&gt;: Hide/Show cursor');<br /></p>
+                <p class="paragraph_style">  Writeln('    &lt;Tab&gt;: Colour cycle');<br /></p>
+                <p class="paragraph_style">  Writeln('           0-9: Select speed');<br /></p>
+                <p class="paragraph_style">  Writeln('           &lt;Tab&gt;: Toggle direction');<br /></p>
+                <p class="paragraph_style">  Writeln('           Other keys to continue');<br /></p>
+                <p class="paragraph_style">  Writeln('    &lt;Esc&gt;: Quit the program');<br /></p>
+                <p class="paragraph_style">  Writeln('    0-9: Change colour palette');<br /></p>
+                <p class="paragraph_style">  Writeln('    4 Arrow keys: Select colour mode');<br /></p>
+                <p class="paragraph_style">  Writeln('                  (favorite: Beauty)');<br /></p>
+                <p class="paragraph_style">  Writeln;<br /></p>
+                <p class="paragraph_style">  Writeln('    To select an area, click on it.');<br /></p>
+                <p class="paragraph_style">  Writeln('         Click again to zoom');<br /></p>
+                <p class="paragraph_style">  Writeln('         Other keys to continue');<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  SetForeColor(15);<br /></p>
+                <p class="paragraph_style">  MoveTo(0, 180);<br /></p>
+                <p class="paragraph_style">  Writeln('    Arrows: Colour mode is Default');<br /></p>
+                <p class="paragraph_style">  Writeln('    &lt;Esc&gt;: Quit, &lt;Space&gt; to start...');<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  while true do <br /></p>
+                <p class="paragraph_style">    if GetNextEvent(EveryEvent, event) then <br /></p>
+                <p class="paragraph_style">      case event.what of<br /></p>
+                <p class="paragraph_style">        KeyDownEvt: begin<br /></p>
+                <p class="paragraph_style">          key := event.message;<br /></p>
+                <p class="paragraph_style">          case key of<br /></p>
+                <p class="paragraph_style">            8:  begin<br /></p>
+                <p class="paragraph_style">                mode := defaultMode;<br /></p>
+                <p class="paragraph_style">                MoveTo(0, 180);<br /></p>
+                <p class="paragraph_style">                Writeln('    Arrows: Colour mode is Default');<br /></p>
+                <p class="paragraph_style">              end;<br /></p>
+                <p class="paragraph_style">            10: begin<br /></p>
+                <p class="paragraph_style">                mode := rangeMode;<br /></p>
+                <p class="paragraph_style">                MoveTo(0, 180);<br /></p>
+                <p class="paragraph_style">                Writeln('    Arrows: Colour mode is Range  ');<br /></p>
+                <p class="paragraph_style">              end;            <br /></p>
+                <p class="paragraph_style">            11: begin<br /></p>
+                <p class="paragraph_style">                mode := beautyMode;<br /></p>
+                <p class="paragraph_style">                MoveTo(0, 180);<br /></p>
+                <p class="paragraph_style">                Writeln('    Arrows: Colour mode is Beauty ');<br /></p>
+                <p class="paragraph_style">              end;            <br /></p>
+                <p class="paragraph_style">            21: begin<br /></p>
+                <p class="paragraph_style">                mode := repeatMode;<br /></p>
+                <p class="paragraph_style">                MoveTo(0, 180);<br /></p>
+                <p class="paragraph_style">                Writeln('    Arrows: Colour mode is Repeat ');<br /></p>
+                <p class="paragraph_style">              end;<br /></p>
+                <p class="paragraph_style">            27: Halt;<br /></p>
+                <p class="paragraph_style">            32: begin<br /></p>
+                <p class="paragraph_style">                ClearScreen(Black);<br /></p>
+                <p class="paragraph_style">                Paint(-2.6, 1.2, 0.012, 30, true);<br /></p>
+                <p class="paragraph_style">              end;<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        end;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style">end.</p>
+              </div>
+              <div style="height: 52px; line-height: 52px; " class="tinyText"> </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 202px; width: 320px;  height: 202px; left: 0px; position: absolute; top: 32px; width: 320px; z-index: 1; " class="tinyText style_SkipStroke_2 shadow_0">
+            <img src="Mandelbrot_GS_files/Mandelbrot.jpg" alt="" style="border: none; height: 202px; width: 320px; " />
+          </div>
+          
+
+
+          <div id="id2" style="height: 187px; left: 0px; position: absolute; top: 252px; width: 320px; z-index: 1; " class="style_SkipStroke_3">
+            <div class="text-content graphic_textbox_layout_style_default_External_320_187" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-top: 0pt; " class="paragraph_style_1">Mandelbrot GS is one of the best Apple IIGS fractal program written in Complete Pascal. It is released in 1992. <br /></p>
+                <p class="paragraph_style_1"><br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style_1">I have also released a much better and faster fractal program called Mandelbrot II GS in 1993, which has a lot of cool features like preview zooming and 640 mode support. You can download it <a class="class1" href="Software.html" title="Software.html">here</a>.</p>
+              </div>
+            </div>
+          </div>
+          <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 0px; line-height: 0px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

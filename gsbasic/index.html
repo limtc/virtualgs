@@ -1,0 +1,208 @@
+<html>
+	<head>
+		<title>GScript BASIC</title>
+		<style>
+			body {
+				margin: auto;
+				color: white;
+				background-color: blue;
+				font-family: courier, monospace;
+			}
+
+			#menu {
+				padding-left: 10; 
+				background-color:black;
+			}
+			
+			#canvasArea {
+				margin-top: 5;
+			 	margin-left: 8;
+			 	margin-right: 5;
+			 	background-color: blue;
+			}
+
+			#scriptArea { 
+				margin-top: 5;
+				color: white;
+				background-color: blue; 
+				font-family: courier, monospace;
+				font-size: 12;
+			 }
+		</style>
+		<script>
+			var agent = navigator.userAgent;
+	
+			if (agent.indexOf("iPhone") > 0 || agent.indexOf("iPod") > 0)
+				window.location.href = "iphone.html";
+	
+			function load(file) {
+				var request = new XMLHttpRequest();
+				var area = document.getElementById("scriptArea");
+		
+				if (request) {
+					request.open("GET", "scripts/" + file + ".js", true);
+			
+					request.onreadystatechange = function() {
+						if (request.readyState == 4)
+							area.value = request.responseText;
+						else
+							area.value = "";
+					};
+			
+					request.send(null);
+				}
+				else
+					area.value = "";
+			}
+
+            function loadCombo() {
+            	var file = document.getElementById("combo").value;
+
+				load(file);
+            	run(file);
+            	document.getElementById("file").value = file;
+            }
+            
+            function run(file) {
+            	var area = document.getElementById("canvasArea");
+				area.src = "run.html?file=" + file;
+				area.focus();
+
+            }
+            
+            function runFile() {
+            	var file = document.getElementById("file").value;
+            	
+            	if (file.length > 0) {
+  	              	load(file);
+					run(file);
+				}
+            }
+        
+			function runScript() {
+				var area = document.getElementById("canvasArea");
+				area.src ="runscript.html?script=" + escape(document.getElementById("scriptArea").value);
+				area.focus();
+			}
+
+			function newScript() {
+				area = document.getElementById("scriptArea");
+				
+				if (area.value.length > 0) {
+					if (!confirm("This will erase the current program, are you sure?"))
+						return;
+				}
+
+				area.value = "";				
+				document.getElementById("file").value = "";
+				document.getElementById("canvasArea").src = "";
+			}
+			
+			function loadScript() {
+				area = document.getElementById("scriptArea");
+				
+				if (area.value.length > 0) {
+					if (!confirm("This will read the program from browser memory and erase current program, are you sure?"))
+						return;
+				}
+				
+				var script = readCookie("script");
+				area.value = (!script) ? "" : unescape(script);
+				document.getElementById("file").value = "";
+				document.getElementById("canvasArea").src = "";
+			}
+			
+			function saveScript() {
+				area = document.getElementById("scriptArea");
+				
+				if (area.value.length > 0) {
+					document.getElementById("file").value = "";
+					writeCookie("script", escape(area.value), 365);
+					alert("The program is saved to browser memory.");
+				}
+			}
+			
+			// Cookie functions
+			
+			function readCookie(name) {
+				var key = name + "=";
+				var ca = document.cookie.split(';');
+				
+				for (var i = 0; i < ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') 
+						c = c.substring(1, c.length);
+						
+					if (c.indexOf(key) == 0) 
+						return c.substring(key.length, c.length);
+				}
+
+				return null;
+			}
+			
+			function writeCookie(name, value, days) {
+				var date = new Date();
+
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 *1000));				
+				document.cookie = name + "=" + value + "; expires=" + date.toGMTString();
+			}
+		</script>
+	</head>
+	<body onload="run('home')">
+		<div id="menu">
+			<select id="combo" onChange="loadCombo()">
+				<option value="home">Home</option>
+				<optgroup label="Sample Scripts">
+					<option value="gs">Apple IIGS</option>
+					<option value="gspics">Apple IIGS Pictures</option>
+					<option value="ball">Bouncing Ball</option>
+					<option value="ctyper">Crazy Typer</option>
+					<option value="demo">Demo</option>
+					<option value="doodle">Doodle</option>
+					<option value="hope">Hope</option>
+					<option value="pattern">Pattern</option>
+					<option value="space">Space</option>
+				</optgroup>
+				<optgroup label="Lores Scripts">
+					<option value="apple">Apple ][ Forever</option>
+					<option value="birthday">Birthday</option>
+					<option value="brainy">Brainy</option>
+					<option value="duet">Duet</option>
+					<option value="kaleidoscope">Kaleidoscope</option>
+					<option value="lrdemo">Lores Demo</option>
+					<option value="lrdoodle">Lores Doodle</option>
+					<option value="night">Night</option>
+					<option value="rndlores">Random Painter</option>
+					<option value="lrstars">Stars</option>
+					<option value="pong">Pong Demo</option>
+				</optgroup>
+			</select>
+			<input id="file" type="text" value="" size="15">
+			<input type="button" value="Run" onclick="runFile()">
+			<input type="button" value="About" onclick="run('readme')">
+			&nbsp;
+			<small>Command</small>
+			<input type="button" value="General" onclick="run('commands/general')">
+			<input type="button" value="Text" onclick="run('commands/text')">
+			<input type="button" value="Hires" onclick="run('commands/hires')">
+			<input type="button" value="Lores" onclick="run('commands/lores')">
+			&nbsp;
+			<small>Color</small>
+			<input type="button" value="Names" onclick="run('colors/colors')">
+			<input type="button" value="Hires" onclick="run('colors/gscolors')">
+			<input type="button" value="Lores" onclick="run('colors/lrcolors')">
+		</div>
+		<table cellspacing="0" cellpadding="0">
+			<tr style="vertical-align:top">
+				<td><iframe id="canvasArea" frameborder="0" width="640" height="500" scrolling="no"></iframe></td>
+				<td align="middle">
+					<textarea id="scriptArea" rows="34" cols="45"></textarea><br>
+					<input type="button" value="New" onclick="newScript()">
+					<input type="button" value="Load" onclick="loadScript()">
+					<input type="button" value="Save" onclick="saveScript()">
+					<input type="button" value="Run" onclick="runScript()">
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

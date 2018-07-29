@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20081101" />
+    <meta name="viewport" content="width=700" />
+    <title>Space Game</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="Space_Game_2_files/Space_Game_2.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='Space_Game_2_files/Space_Game_2IE.css'/><![endif]-->
+    <script type="text/javascript" src="Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="Space_Game_2_files/Space_Game_2.js"></script>
+  </head>
+  <body style="background: #ffffff; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 0px; margin-left: auto; margin-right: auto; margin-top: 0px; overflow: hidden; position: relative; word-wrap: break-word;  background: #ffffff; text-align: left; width: 700px; " id="body_content">
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 35px; margin-top: 0px; position: relative; width: 630px; z-index: 1; ">
+    
+            <div id="widget0-navbar" class="navbar">
+
+      
+              <div id="widget0-bg" class="navbar-bg">
+
+        
+                <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                
+      
+</div>
+              
+    
+</div>
+          </div>
+          <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', 'Scripts/Widgets/Navbar', 'Scripts/Widgets/SharedResources', '.', {"current-page-GUID": "ADD351F5-0774-48D7-98A9-2F2BC947976E", "path-to-root": "", "isCollectionPage": "NO", "navbar-css": ".navbar {\n\tfont-family: Arial, sans-serif;\n\tfont-size: 1em;\n\tcolor: #666;\n\tmargin: 9px 0px 6px 0px;\n\tline-height: 30px;\n}\n\n.navbar-bg {\n\ttext-align: center;\n}\n\n.navbar-bg ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n\nli {\n\tlist-style-type: none;\n\tdisplay: inline;\n\tpadding: 0px 10px 0px 10px;\n}\n\n\nli a {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:visited {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:hover\r{\r\n \tcolor: #463C3C;\n\ttext-decoration: none;\r}\n\n\nli.current-page a\r{\r\t color: #463C3C;\n\ttext-decoration: none;\n\tfont-weight: bold;\r\r}"});
+//--><!]]></script>
+          <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 73px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div id="id1" style="height: 50px; left: 35px; position: absolute; top: 23px; width: 630px; z-index: 1; " class="style_SkipStroke">
+            <div class="text-content style_External_630_50" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header">Space Game</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 1px; width: 630px;  height: 0px; left: 35px; position: absolute; top: 3px; width: 630px; z-index: 1; " class="tinyText">
+            <div style="position: relative; width: 630px; ">
+              <img src="Space_Game_2_files/shapeimage_1.jpg" alt="" style="height: 1px; left: 0px; position: absolute; top: 0px; width: 630px; " />
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+          <div style="margin-left: 340px; margin-top: 31px; position: relative; width: 360px; z-index: 1; " class="style_SkipStroke_1 flowDefining">
+            <div class="text-content style_External_360_3583" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-top: 0pt; " class="paragraph_style">program Space;<br /></p>
+                <p class="paragraph_style">uses Common, QuickDrawII, EventMgr, MscToolSet;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">const<br /></p>
+                <p class="paragraph_style">  MAX_ROCKS = 5;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">type<br /></p>
+                <p class="paragraph_style">  Star = Object<br /></p>
+                <p class="paragraph_style">    x, y, speed, color: Integer;<br /></p>
+                <p class="paragraph_style">    procedure setup;<br /></p>
+                <p class="paragraph_style">    procedure draw;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  Rock = Object<br /></p>
+                <p class="paragraph_style">    x, y, speed: Integer;<br /></p>
+                <p class="paragraph_style">    procedure setup;<br /></p>
+                <p class="paragraph_style">    procedure draw;<br /></p>
+                <p class="paragraph_style">    procedure reset;<br /></p>
+                <p class="paragraph_style">    function hasCollided(pos: Integer): Boolean;<br /></p>
+                <p class="paragraph_style">    function hasDestroyed(pos: Integer): Boolean;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  i, j, x, y, pos, score: Integer;<br /></p>
+                <p class="paragraph_style">  tick: longInt;<br /></p>
+                <p class="paragraph_style">  mouse: Point;<br /></p>
+                <p class="paragraph_style">  stars: Array[0..31] of Star;<br /></p>
+                <p class="paragraph_style">  rocks: Array[1..MAX_ROCKS] of Rock;<br /></p>
+                <p class="paragraph_style">  gameOver: Boolean;<br /></p>
+                <p class="paragraph_style">  str: String;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Star }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure Star.setup;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  x := randomInteger mod 320;<br /></p>
+                <p class="paragraph_style">  y := randomInteger mod 200;<br /></p>
+                <p class="paragraph_style">  speed := randomInteger mod 5 + 1;<br /></p>
+                <p class="paragraph_style">  color := randomInteger mod 15 + 1;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure Star.draw;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(black);<br /></p>
+                <p class="paragraph_style">  moveTo(x, y);<br /></p>
+                <p class="paragraph_style">  line(0, 0);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  y := y + speed;<br /></p>
+                <p class="paragraph_style">  if y &gt; 199 then begin<br /></p>
+                <p class="paragraph_style">    y := 0;<br /></p>
+                <p class="paragraph_style">    speed := randomInteger mod 5 + 1;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  setSolidPenPat(color);<br /></p>
+                <p class="paragraph_style">  moveTo(x, y);<br /></p>
+                <p class="paragraph_style">  line(0, 0);<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Rock }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure Rock.setup;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  x := randomInteger mod 310;<br /></p>
+                <p class="paragraph_style">  y := randomInteger mod 100;<br /></p>
+                <p class="paragraph_style">  speed := randomInteger mod 3 + 1;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure Rock.draw;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  r: Rect;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  setRect(r, x, y, x + 10, y + 10);<br /></p>
+                <p class="paragraph_style">  eraseOval(r);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  y := y + speed;<br /></p>
+                <p class="paragraph_style">  if y &gt; 190 then begin<br /></p>
+                <p class="paragraph_style">    x := randomInteger mod 310;<br /></p>
+                <p class="paragraph_style">    y := 0;<br /></p>
+                <p class="paragraph_style">    speed := randomInteger mod 6 + 3;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  setSolidPenPat(2);<br /></p>
+                <p class="paragraph_style">  setRect(r, x, y, x + 10, y + 10);<br /></p>
+                <p class="paragraph_style">  paintOval(r);<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure Rock.reset;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  r: Rect;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  setRect(r, x, y, x + 10, y + 10);<br /></p>
+                <p class="paragraph_style">  eraseOval(r);<br /></p>
+                <p class="paragraph_style">  x := randomInteger mod 310;<br /></p>
+                <p class="paragraph_style">  y := 0;<br /></p>
+                <p class="paragraph_style">  speed := randomInteger mod 6 + 3;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">function Rock.hasCollided;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  if (y &gt; 170) and (y &lt; 190) and (x &gt; pos) and <br /></p>
+                <p class="paragraph_style">    (x &lt; pos + 20) then hasCollided := true<br /></p>
+                <p class="paragraph_style">  else hasCollided := false;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">function Rock.hasDestroyed;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  if (x &gt; pos) and (x &lt; pos + 10) then <br /></p>
+                <p class="paragraph_style">    hasDestroyed := true<br /></p>
+                <p class="paragraph_style">  else hasDestroyed := false;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Draw spaceship }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure drawShip;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  r: Rect;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  setRect(r, pos, 180, pos + 20, 188);<br /></p>
+                <p class="paragraph_style">  eraseRect(r);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  getMouse(mouse);<br /></p>
+                <p class="paragraph_style">  pos := mouse.h;<br /></p>
+                <p class="paragraph_style">  if pos &gt; 300 then pos := 300;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  setSolidPenPat(7);<br /></p>
+                <p class="paragraph_style">  setRect(r, pos, 183, pos + 20, 188);<br /></p>
+                <p class="paragraph_style">  paintOval(r);<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(4);<br /></p>
+                <p class="paragraph_style">  setRect(r, pos + 5, 180, pos + 15, 185);<br /></p>
+                <p class="paragraph_style">  paintOval(r);<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Draw stars }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure drawStars;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  i: Integer;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  for i := 0 to 31 do<br /></p>
+                <p class="paragraph_style">    stars[i].draw;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Draw rocks }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure drawRocks;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  i: Integer;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  for i := 1 to MAX_ROCKS do<br /></p>
+                <p class="paragraph_style">    rocks[i].draw;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Draw explosion }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure drawExplosion(x, y, radius, color: <br /></p>
+                <p class="paragraph_style">  Integer);<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  r: Rect;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(color);<br /></p>
+                <p class="paragraph_style">  setRect(r, x - radius, y - radius, <br /></p>
+                <p class="paragraph_style">    x + 5 + radius, y + 5 + radius);<br /></p>
+                <p class="paragraph_style">  paintOval(r);<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Draw laser }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure drawLaser(pos, color: Integer);<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(color);<br /></p>
+                <p class="paragraph_style">  moveTo(pos + 10, 0);<br /></p>
+                <p class="paragraph_style">  lineTo(pos + 10, 179);<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Main }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Setup  }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  startDesk(320);<br /></p>
+                <p class="paragraph_style">  clearScreen(black);<br /></p>
+                <p class="paragraph_style">  setSolidBackPat(black);<br /></p>
+                <p class="paragraph_style">  hideCursor;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  score := 0;<br /></p>
+                <p class="paragraph_style">  tick := getTick;<br /></p>
+                <p class="paragraph_style">  gameOver := false;<br /></p>
+                <p class="paragraph_style">  getMouse(mouse);<br /></p>
+                <p class="paragraph_style">  pos := mouse.h;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  for i := 0 to 31 do begin<br /></p>
+                <p class="paragraph_style">    new(stars[i]);<br /></p>
+                <p class="paragraph_style">    stars[i].setup;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  for i := 1 to MAX_ROCKS do begin<br /></p>
+                <p class="paragraph_style">    new(rocks[i]);<br /></p>
+                <p class="paragraph_style">    rocks[i].setup;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  repeat<br /></p>
+                <p class="paragraph_style">    drawStars;<br /></p>
+                <p class="paragraph_style">    drawRocks;<br /></p>
+                <p class="paragraph_style">    drawShip;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    repeat until getTick &gt; tick;<br /></p>
+                <p class="paragraph_style">    tick := tick + 1;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    { Check collision }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    for i := 1 to MAX_ROCKS do begin<br /></p>
+                <p class="paragraph_style">      if rocks[i].hasCollided(pos) then begin<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      { Explosion }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      x := rocks[i].x;<br /></p>
+                <p class="paragraph_style">      y := rocks[i].y;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      for j := 1 to 15 do begin<br /></p>
+                <p class="paragraph_style">        drawStars;<br /></p>
+                <p class="paragraph_style">        drawRocks;<br /></p>
+                <p class="paragraph_style">    drawExplosion(x, y, j * 5, j);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">        repeat until getTick - tick &gt; 3;<br /></p>
+                <p class="paragraph_style">        tick := getTick;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      sysBeep;<br /></p>
+                <p class="paragraph_style">      gameOver := true;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Fire laser }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  if button(0) then begin<br /></p>
+                <p class="paragraph_style">    drawLaser(pos, white);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    for i := 1 to MAX_ROCKS do begin<br /></p>
+                <p class="paragraph_style">      drawStars;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      if rocks[i].hasDestroyed(pos) then begin<br /></p>
+                <p class="paragraph_style">        score := score + rocks[i].y div 10;<br /></p>
+                <p class="paragraph_style">        rocks[i].reset;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    drawLaser(pos, black);<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">  until gameOver;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Game over }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  moveTo(60, 90);<br /></p>
+                <p class="paragraph_style">  setBackColor(black);<br /></p>
+                <p class="paragraph_style">  setForeColor(9);<br /></p>
+                <p class="paragraph_style">  str := concat('Game Over. Your Score is ', <br /></p>
+                <p class="paragraph_style">    cnvis(score), '.');<br /></p>
+                <p class="paragraph_style">  drawString(str);<br /></p>
+                <p class="paragraph_style">  repeat until button(0);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  for i := 0 to 31 do<br /></p>
+                <p class="paragraph_style">    dispose(stars[i]);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  for i := 1 to MAX_ROCKS do<br /></p>
+                <p class="paragraph_style">    dispose(rocks[i]);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  endDesk;<br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style">end.</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div id="id2" style="height: 45px; left: 0px; position: absolute; top: 252px; width: 320px; z-index: 1; " class="style_SkipStroke_2">
+            <div class="text-content graphic_textbox_layout_style_default_External_320_45" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="paragraph_style_1">Orca/Pascal version, written using Object Pascal to demonstrate object oriented programming.</p>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript"><!--
+writeMovie1();
+--></script>
+          
+
+
+          <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 0px; line-height: 0px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

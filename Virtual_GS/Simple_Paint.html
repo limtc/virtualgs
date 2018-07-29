@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20090125" />
+    <meta name="viewport" content="width=700" />
+    <title>Simple Paint</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="Simple_Paint_files/Simple_Paint.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='Simple_Paint_files/Simple_PaintIE.css'/><![endif]-->
+    <script type="text/javascript" src="Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="Scripts/iWebImage.js"></script>
+    <script type="text/javascript" src="Simple_Paint_files/Simple_Paint.js"></script>
+  </head>
+  <body style="background: #ffffff; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 0px; margin-left: auto; margin-right: auto; margin-top: 0px; overflow: hidden; position: relative; word-wrap: break-word;  background: #ffffff; text-align: left; width: 700px; " id="body_content">
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 35px; margin-top: 0px; position: relative; width: 630px; z-index: 1; ">
+    
+            <div id="widget0-navbar" class="navbar">
+
+      
+              <div id="widget0-bg" class="navbar-bg">
+
+        
+                <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                
+      
+</div>
+              
+    
+</div>
+          </div>
+          <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', 'Scripts/Widgets/Navbar', 'Scripts/Widgets/SharedResources', '.', {"current-page-GUID": "2BFF67F2-B500-4EEC-BA51-8840B9733F56", "path-to-root": "", "isCollectionPage": "NO", "navbar-css": ".navbar {\n\tfont-family: Arial, sans-serif;\n\tfont-size: 1em;\n\tcolor: #666;\n\tmargin: 9px 0px 6px 0px;\n\tline-height: 30px;\n}\n\n.navbar-bg {\n\ttext-align: center;\n}\n\n.navbar-bg ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n\nli {\n\tlist-style-type: none;\n\tdisplay: inline;\n\tpadding: 0px 10px 0px 10px;\n}\n\n\nli a {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:visited {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:hover\r{\r\n \tcolor: #463C3C;\n\ttext-decoration: none;\r}\n\n\nli.current-page a\r{\r\t color: #463C3C;\n\ttext-decoration: none;\n\tfont-weight: bold;\r\r}"});
+//--><!]]></script>
+          <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 73px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div id="id1" style="height: 50px; left: 35px; position: absolute; top: 23px; width: 630px; z-index: 1; " class="style_SkipStroke">
+            <div class="text-content style_External_630_50" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header">Simple Paint</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 1px; width: 630px;  height: 0px; left: 35px; position: absolute; top: 3px; width: 630px; z-index: 1; " class="tinyText">
+            <div style="position: relative; width: 630px; ">
+              <img src="Simple_Paint_files/shapeimage_1.jpg" alt="" style="height: 1px; left: 0px; position: absolute; top: 0px; width: 630px; " />
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+          <div style="margin-left: 340px; margin-top: 31px; position: relative; width: 360px; z-index: 1; " class="style_SkipStroke_1 flowDefining">
+            <div class="text-content style_External_360_1932" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-top: 0pt; " class="paragraph_style">program SimplePaint;<br /></p>
+                <p class="paragraph_style">uses Types, QuickDraw, Events;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  i, x, y, key, bsize, etypes: Integer;<br /></p>
+                <p class="paragraph_style">  mouse: Point;<br /></p>
+                <p class="paragraph_style">  r, tbar: Rect;<br /></p>
+                <p class="paragraph_style">  bsizes: array[1..3] of Rect;<br /></p>
+                <p class="paragraph_style">  colors: array[0..15] of Rect;<br /></p>
+                <p class="paragraph_style">  event: EventRecord;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Draw screen }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure drawScreen;<br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Draw title bar }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  clearScreen(black);<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(white);<br /></p>
+                <p class="paragraph_style">  setRect(tbar, 0, 0, 319, 20);<br /></p>
+                <p class="paragraph_style">  paintRect(tbar);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Draw brush sizes }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  setSolidPenPat(black);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  for i := 1 to 3 do begin<br /></p>
+                <p class="paragraph_style">    setRect(bsizes[i], 5 + (i - 1) * 8, 5, <br /></p>
+                <p class="paragraph_style">      15 + (i - 1) * 8, 15);<br /></p>
+                <p class="paragraph_style">    setPenSize(i * 2, 1);<br /></p>
+                <p class="paragraph_style">    moveTo(i * 8, 5);<br /></p>
+                <p class="paragraph_style">    line(0, 9);<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  penNormal;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Draw color bar }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  for i := 0 to 15 do begin<br /></p>
+                <p class="paragraph_style">    setRect(colors[i], 35 + i * 10, 5, <br /></p>
+                <p class="paragraph_style">      45 + i * 10, 15);<br /></p>
+                <p class="paragraph_style">    setSolidPenPat(i);<br /></p>
+                <p class="paragraph_style">    paintRect(colors[i]);<br /></p>
+                <p class="paragraph_style">    setSolidPenPat(0);<br /></p>
+                <p class="paragraph_style">    frameRect(colors[i]);<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Draw title }  <br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  moveTo(205, 13);<br /></p>
+                <p class="paragraph_style">  setForeColor(9);<br /></p>
+                <p class="paragraph_style">  setBackColor(4);<br /></p>
+                <p class="paragraph_style">  drawString(' Simple Paint ');<br /></p>
+                <p class="paragraph_style">  setSolidPenPat(white);  <br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">{ Draw dots }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure drawDots(x, y: Integer);<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  ox, oy, ix, iy: Integer;<br /></p>
+                <p class="paragraph_style">  size: Real;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  size := bsize;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">    while button(0) do begin      <br /></p>
+                <p class="paragraph_style">      getMouse(mouse);<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">      if not PtInRect(mouse, tbar) then begin<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">        { Paint dot }<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">        ox := x;<br /></p>
+                <p class="paragraph_style">        oy := y;<br /></p>
+                <p class="paragraph_style">        x := trunc(mouse.h - bsize div 2);<br /></p>
+                <p class="paragraph_style">        y := trunc(mouse.v - bsize div 2);<br /></p>
+                <p class="paragraph_style">        setRect(r, x, y, x + bsize, y + bsize);<br /></p>
+                <p class="paragraph_style">        paintOval(r);<br /></p>
+                <p class="paragraph_style">        <br /></p>
+                <p class="paragraph_style">        { Paint connected dot }<br /></p>
+                <p class="paragraph_style">        <br /></p>
+                <p class="paragraph_style">        if (ox &lt;&gt; x) or (oy &lt;&gt; y) then begin<br /></p>
+                <p class="paragraph_style">          size := bsize;<br /></p>
+                <p class="paragraph_style">          ix := (ox + x) div 2;<br /></p>
+                <p class="paragraph_style">          iy := (oy + y) div 2;<br /></p>
+                <p class="paragraph_style">          setRect(r, ix, iy, ix + bsize, <br /></p>
+                <p class="paragraph_style">            iy + bsize);<br /></p>
+                <p class="paragraph_style">          paintOval(r);<br /></p>
+                <p class="paragraph_style">      end<br /></p>
+                <p class="paragraph_style">      else begin<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">        { Enlarge paint area if pressed }<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">        if (size &lt; bsize * 2) then<br /></p>
+                <p class="paragraph_style">          size := size + 0.01;<br /></p>
+                <p class="paragraph_style">        setRect(r, x - trunc(size / 2), <br /></p>
+                <p class="paragraph_style">          y - trunc(size / 2), trunc(x + size), <br /></p>
+                <p class="paragraph_style">          trunc(y + size));<br /></p>
+                <p class="paragraph_style">          paintOval(r);<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  graphics(320);<br /></p>
+                <p class="paragraph_style">  bsize := 3;<br /></p>
+                <p class="paragraph_style">  etypes := keyDownMask + mDownMask;<br /></p>
+                <p class="paragraph_style">  drawScreen;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">    while true do begin<br /></p>
+                <p class="paragraph_style">    if getNextEvent(etypes, event) then begin     <br /></p>
+                <p class="paragraph_style">      case event.what of<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">        { Key down }<br /></p>
+                <p class="paragraph_style">        <br /></p>
+                <p class="paragraph_style">        keyDownEvt: begin<br /></p>
+                <p class="paragraph_style">          key := event.message;<br /></p>
+                <p class="paragraph_style">          if key = 27 then halt<br /></p>
+                <p class="paragraph_style">          else if key = 32 then drawScreen;<br /></p>
+                <p class="paragraph_style">        end;<br /></p>
+                <p class="paragraph_style">        <br /></p>
+                <p class="paragraph_style">        { Mouse down }<br /></p>
+                <p class="paragraph_style">        <br /></p>
+                <p class="paragraph_style">        mouseDownEvt: begin<br /></p>
+                <p class="paragraph_style">          mouse := event.where;<br /></p>
+                <p class="paragraph_style">          <br /></p>
+                <p class="paragraph_style">          { Set brush size }<br /></p>
+                <p class="paragraph_style">          <br /></p>
+                <p class="paragraph_style">          for i := 1 to 3 do<br /></p>
+                <p class="paragraph_style">            if ptInRect(mouse, bsizes[i]) then <br /></p>
+                <p class="paragraph_style">              bsize := i * 3;<br /></p>
+                <p class="paragraph_style">                  <br /></p>
+                <p class="paragraph_style">            { Set color }<br /></p>
+                <p class="paragraph_style">        <br /></p>
+                <p class="paragraph_style">            for i := 0 to 15 do <br /></p>
+                <p class="paragraph_style">              if ptInRect(mouse, colors[i]) then <br /></p>
+                <p class="paragraph_style">                setSolidPenPat(i);<br /></p>
+                <p class="paragraph_style">            <br /></p>
+                <p class="paragraph_style">            drawDots(mouse.h - bsize div 2, <br /></p>
+                <p class="paragraph_style">            mouse.v - bsize div 2);<br /></p>
+                <p class="paragraph_style">          end;<br /></p>
+                <p class="paragraph_style">        end;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style">end.</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 201px; width: 320px;  height: 201px; left: 0px; position: absolute; top: 32px; width: 320px; z-index: 1; " class="tinyText style_SkipStroke_2 shadow_0">
+            <img src="Simple_Paint_files/gs.jpg" alt="" style="border: none; height: 201px; width: 320px; " />
+          </div>
+          
+
+
+          <div id="id2" style="height: 180px; left: 0px; position: absolute; top: 252px; width: 320px; z-index: 1; " class="style_SkipStroke_3">
+            <div class="text-content graphic_textbox_layout_style_default_External_320_180" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-top: 0pt; " class="paragraph_style_1">A simple painting program for kids. You can change the paint brush size and color. If you press the mouse button long enough, the paint brush size will slowly expand to double its size. Press space bar to clear the picture and ESC to quit the program. <br /></p>
+                <p class="paragraph_style_1"><br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style_1">This program teaches the use of procedure and event driven programming.</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 100px; width: 160px;  height: 100px; left: 1px; position: absolute; top: 493px; width: 160px; z-index: 1; " class="tinyText style_SkipStroke_4 stroke_0 shadow_1">
+            <img src="Simple_Paint_files/DoraPaint.jpg" alt="" style="border: none; height: 101px; width: 160px; " />
+          </div>
+          
+
+
+          <div id="id3" style="height: 122px; left: 174px; position: absolute; top: 482px; width: 146px; z-index: 1; " class="style_SkipStroke_3">
+            <div class="text-content graphic_textbox_layout_style_default_External_146_122" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="paragraph_style_1">Dora Paint is special version of Simple Paint for Dora fans (special thanks to Mike Stephens for scanned images). </p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div id="id4" style="height: 49px; left: -2px; position: absolute; top: 443px; width: 162px; z-index: 1; " class="style_SkipStroke_3">
+            <div class="text-content graphic_textbox_layout_style_default_External_162_49" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="paragraph_style_2">Dora Paint</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div id="id5" style="height: 218px; left: 174px; position: absolute; top: 618px; width: 138px; z-index: 1; " class="style_SkipStroke_3">
+            <div class="text-content graphic_textbox_layout_style_default_External_138_218" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-top: 0pt; " class="paragraph_style_1">Simple Paint has been ported to iPhone using <a class="class1" href="GScript.html" title="GScript.html">GScript</a>.<br /></p>
+                <p class="paragraph_style_1"><br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style_1">Simple Paint for iPhone is been featured in <a title="http://www.apple.com/webapps/entertainment/simplepaint.html" class="class2" onkeypress="window.open(this.href); return false;" onclick="window.open(this.href); return false;" href="http://www.apple.com/webapps/entertainment/simplepaint.html">Apple web site</a> and now available in Apple App Store!</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 242px; width: 161px;  height: 242px; left: -1px; position: absolute; top: 619px; width: 161px; z-index: 1; " class="tinyText style_SkipStroke_5 stroke_1 shadow_2">
+            <img src="Simple_Paint_files/photo.jpg" alt="" style="border: none; height: 242px; width: 161px; " />
+          </div>
+          
+
+
+          <div style="height: 287px; width: 300px;  height: 287px; left: -1px; position: absolute; top: 883px; width: 300px; z-index: 1; " class="tinyText style_SkipStroke_5 stroke_1 shadow_3">
+            <img src="Simple_Paint_files/SimplePaint.png" alt="" style="border: none; height: 287px; width: 300px; " />
+          </div>
+          <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 0px; line-height: 0px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

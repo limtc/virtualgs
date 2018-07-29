@@ -1,0 +1,191 @@
+<html>
+	<head>
+		<title>Space</title>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body bgcolor="#222222" text="white" link="white" vlink="white">
+		<small>
+			<pre>
+package {
+	import flash.text.*;
+	import flash.media.*;
+	import flash.events.*;
+	import flash.display.*;
+	import flash.net.URLRequest;
+
+	public class Space extends Sprite {
+		private var music:Sound;
+		private var effect:Sound;
+	 	private var ship:SpaceShip;
+		private var stars:Array = new Array();
+		
+		public function Space():void {
+			var swidth:int = stage.stageWidth;
+			var sheight:int = stage.stageHeight;
+			
+			if (swidth == 0)
+				swidth = 640;
+			
+			if (sheight == 0)
+				sheight = 400;
+
+			// Load sound effects
+			
+			effect = new Sound(new URLRequest("Laser.mp3"));
+			music = new Sound(new URLRequest("Delta.mp3"));
+			music.play(0, 99);
+			
+			// Write title
+
+			var text:TextField = new TextField;
+			var format:TextFormat = new TextFormat;
+						
+			text.text = "SPACE";
+			text.y = sheight / 2 - 50;
+			text.width = swidth;
+			text.selectable = false;
+			text.textColor = 0xffff;
+			format.size = "30";
+			format.align = TextFormatAlign.CENTER;
+			text.setTextFormat(format);
+			
+			addChild(text);
+		
+			// Create stars
+		
+			for (var i:int = 0; i < 20; i++) {
+				var star:Star = new Star(swidth, sheight);
+				stars.push(star);
+				addChild(star);
+			}
+
+			// Create space ship
+
+			ship = new SpaceShip(swidth, sheight);
+			addChild(ship);
+
+			// Handle events
+
+			addEventListener(Event.ENTER_FRAME, onEnterFrame);
+			ship.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN, ship.onKeyDown);		
+			stage.displayState = StageDisplayState.FULL_SCREEN;
+			stage.scaleMode = StageScaleMode.EXACT_FIT;
+		}
+		
+		// Handle update event
+
+		private function onEnterFrame(event:Event):void {
+			for each (var star:Star in stars)
+				star.move();
+		}
+	
+		// Handle mouse event
+		
+		public function onMouseDown(event:MouseEvent):void {
+			effect.play();
+			ship.reset();
+		}
+	} 
+}
+
+package {
+	import flash.events.*;
+	import flash.ui.Keyboard;
+	import flash.display.Sprite;
+
+	public class SpaceShip extends Sprite {		
+		private var swidth:int;
+		private var sheight:int;
+		
+		public function SpaceShip(width: int, height: int):void {
+			swidth = width;
+			sheight = height;
+			x = swidth / 2 - 25;
+			y = sheight / 2;
+			
+			graphics.beginFill(0xff);
+			graphics.drawEllipse(0, 0, 50, 20);
+			graphics.endFill();
+			graphics.beginFill(0xff0000, 0.8);
+			graphics.drawCircle(25, 0, 10);
+			graphics.endFill();
+		}
+
+		// Reset ship
+		
+		public function reset():void {
+			x = Math.random() * (swidth - 50);
+			y = Math.random() * (sheight - 25);
+			rotation = 0;
+		}
+		
+		// Handle keyboard event
+		
+		public function onKeyDown(event:KeyboardEvent):void {
+			switch (event.keyCode) {
+				case Keyboard.LEFT:
+					if (x > 0)
+						x -= 10;
+					break;
+					
+				case Keyboard.RIGHT:
+					if (x < swidth - 50)
+						x += 10;
+					break;
+					
+				case Keyboard.UP:
+					if (y > 10)
+						y -= 10;
+					break;
+					
+				case Keyboard.DOWN:
+					if (y < sheight - 20)
+						y += 10;
+					break;
+					
+				case Keyboard.SPACE:
+					rotation += 90;
+			}
+		}
+	}
+}
+
+package {
+	import flash.display.Shape;
+
+	public class Star extends Shape {
+		private var swidth:int;
+		private var sheight:int;
+		private var speed:int;
+		
+		public function Star(width:int, height:int):void {
+			swidth = width;
+			sheight = height;
+			
+			x = Math.random() * swidth;
+			y = Math.random() * sheight;
+			speed = Math.random() * 10 + 1;
+			
+			graphics.beginFill(Math.random() * 0xffffff);
+			graphics.drawCircle(0, 0, Math.random() * 4 + 1);
+			graphics.endFill();
+		}
+		
+		// Move star
+		
+		public function move():void {
+			x += speed;
+	
+			if (x > swidth) {
+				x = 10;
+				y = Math.random() * sheight;
+				speed = Math.random() * 10 + 1;
+			}	
+		}
+	}
+}
+			</pre>
+		</small>
+	</body>
+</html>

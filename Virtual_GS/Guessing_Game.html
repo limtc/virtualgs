@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20081101" />
+    <meta name="viewport" content="width=700" />
+    <title>Guessing Game</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="Guessing_Game_files/Guessing_Game.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='Guessing_Game_files/Guessing_GameIE.css'/><![endif]-->
+    <script type="text/javascript" src="Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="Scripts/iWebImage.js"></script>
+    <script type="text/javascript" src="Guessing_Game_files/Guessing_Game.js"></script>
+  </head>
+  <body style="background: #ffffff; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 10px; margin-left: auto; margin-right: auto; margin-top: 10px; overflow: hidden; position: relative; word-wrap: break-word;  background: #ffffff; text-align: left; width: 700px; " id="body_content">
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 20px; margin-top: 0px; position: relative; width: 660px; z-index: 1; ">
+    
+            <div id="widget0-navbar" class="navbar">
+
+      
+              <div id="widget0-bg" class="navbar-bg">
+
+        
+                <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                
+      
+</div>
+              
+    
+</div>
+          </div>
+          <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', 'Scripts/Widgets/Navbar', 'Scripts/Widgets/SharedResources', '.', {"current-page-GUID": "5B1E2BE4-3698-4BCB-9803-AD46C48332E1", "path-to-root": "", "isCollectionPage": "NO", "navbar-css": ".navbar {\n\tfont-family: 'Helvetica Neue', Arial, sans-serif;\n\tfont-size: .8em;\n\tcolor: #666666;\n\tline-height: 30px;\n\tborder-bottom: 3px solid #ccc;\n}\n\n.navbar-bg {\n\ttext-align: right;}\n\n.navbar-bg ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n\nli {\n\tlist-style-type: none;\n\tdisplay: inline;\n\tpadding: 0px 5px 0px 0px;\n}\n\n\nli a {\n\ttext-decoration: none;\n\tpadding: 10px;\n\tcolor: #666666;\n\tfont-weight: bold;\n}\n\nli a:visited {\n\ttext-decoration: none;\n\tpadding: 10px;\n\tcolor: #666666;\n\tfont-weight: bold;\n}\n\nli a:hover\r{\r\n \tcolor: #999999;\n\ttext-decoration: none;\r}\n\n\nli.current-page a\r{\r\t color: #66ABC5;\n\ttext-decoration: none;\r}"});
+//--><!]]></script>
+          <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 75px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div id="id1" style="height: 43px; left: 20px; position: absolute; top: 17px; width: 515px; z-index: 1; " class="style_SkipStroke">
+            <div class="text-content style_External_515_43" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header">Guessing Game</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+          <div style="margin-left: 350px; margin-top: 21px; position: relative; width: 330px; z-index: 1; " class="style_SkipStroke_1 flowDefining">
+            <div class="text-content style_External_330_702" style="padding: 0px; ">
+              <div class="style_1">
+                <p style="padding-top: 0pt; " class="paragraph_style">program Guess;<br /></p>
+                <p class="paragraph_style">uses Types, QuickDraw, MiscTool;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  ans, rand, loop, score: Integer;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Setup }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  graphics(640);<br /></p>
+                <p class="paragraph_style">  setRandSeed(getTick);<br /></p>
+                <p class="paragraph_style">  hidecursor;<br /></p>
+                <p class="paragraph_style">  writeln('*** Guessing Game *** By: Ding Wen');<br /></p>
+                <p class="paragraph_style">  writeln;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Set varibles }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  loop := 0;<br /></p>
+                <p class="paragraph_style">  score := 110;<br /></p>
+                <p class="paragraph_style">  rand := random mod 100 + 1;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  while loop &lt;= 10 do begin<br /></p>
+                <p class="paragraph_style">    loop := loop + 1;<br /></p>
+                <p class="paragraph_style">    score := score - 10;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    { Ask question }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    writeln('Guess a number from 1 to 100.');<br /></p>
+                <p class="paragraph_style">    readln(ans);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    { Check answer }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">    if ans &lt; rand then<br /></p>
+                <p class="paragraph_style">      writeln('Too low.')<br /></p>
+                <p class="paragraph_style">    else begin<br /></p>
+                <p class="paragraph_style">      if ans &gt; rand then<br /></p>
+                <p class="paragraph_style">        writeln('Too High.')<br /></p>
+                <p class="paragraph_style">      else begin<br /></p>
+                <p class="paragraph_style">        if ans = rand then begin<br /></p>
+                <p class="paragraph_style">          writeln('You Win!');<br /></p>
+                <p class="paragraph_style">          writeln('You had ', loop, ' tries.');<br /></p>
+                <p class="paragraph_style">          writeln('Good luck next time!');<br /></p>
+                <p class="paragraph_style">          leave;<br /></p>
+                <p class="paragraph_style">        end;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style">    end;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Write score }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  writeln('Here is your score:',score, '/100');<br /></p>
+                <p class="paragraph_style">  readln;<br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style">end.</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 188px; width: 300px;  height: 188px; left: 20px; position: absolute; top: 22px; width: 300px; z-index: 1; " class="tinyText style_SkipStroke_2 shadow_0">
+            <img src="Guessing_Game_files/guess.jpg" alt="" style="border: none; height: 188px; width: 300px; " />
+          </div>
+          
+
+
+          <div id="id2" style="height: 127px; left: 20px; position: absolute; top: 242px; width: 300px; z-index: 1; " class="style_SkipStroke_3">
+            <div class="text-content graphic_textbox_layout_style_default_External_300_127" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-top: 0pt; " class="Free_Form">This program is a classic guessing game implemented for Apple IIGS.<br /></p>
+                <p class="Free_Form"><br /></p>
+                <p style="padding-bottom: 0pt; " class="Free_Form">It shows the understanding of various programming concepts like loop and decision making. It also shows how to use the system tick to do a better random number generation.</p>
+              </div>
+            </div>
+          </div>
+          <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 0px; line-height: 0px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

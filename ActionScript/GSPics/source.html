@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<title>GS Pictures</title>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body bgcolor="#222222" text="white" link="white" vlink="white">
+		<small>
+			<pre>
+package {
+	import flash.display.*;
+	import flash.events.*;
+	import flash.net.URLRequest;
+
+	public class GSPics extends Sprite {
+		private var pic:Picture;
+		private var pics:Array = new Array();
+		
+		// Setup pictures		
+				
+		public function GSPics():void {
+			var loader:Loader = new Loader();
+			var swidth:int = stage.stageWidth;
+			var sheight:int = stage.stageHeight;
+
+			if (swidth == 0)
+				swidth = 640;
+			
+			if (sheight == 0)
+				sheight = 400;
+				
+			// Add background
+			
+			loader.load(new URLRequest("background.jpg"));
+			addChild(loader);
+				
+			// Add pictures
+				
+			for (var i:int = 1; i < 10; i++) {
+				pic = new Picture("pic" + i + ".jpg", i, swidth, sheight);
+				pics.push(pic);
+				addChild(pic);
+				
+				pic.addEventListener(MouseEvent.MOUSE_DOWN, pic.onMouseDown);
+			}
+
+			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onComplete);
+			stage.displayState = StageDisplayState.FULL_SCREEN;
+			stage.scaleMode = StageScaleMode.EXACT_FIT;	
+		}
+		
+		// Start moving pictures
+
+		private function onComplete(event:Event):void {
+			addEventListener(Event.ENTER_FRAME, onEnterFrame);
+		}		
+		
+		// Move pictures
+
+		private function onEnterFrame(event:Event):void {
+			for each (var pic:Picture in pics)
+				pic.move();
+		}
+	} 
+}
+
+package {
+	import flash.events.*;
+	import flash.display.*;
+	import flash.net.URLRequest;
+
+	public class Picture extends Sprite {
+		private var speed:Number;
+		private var swidth:int;
+		private var sheight:int;
+		private var top:int;
+
+		// Setup picture
+
+		public function Picture(url:String, depth:int, width:int, height:int):void {
+			var loader:Loader = new Loader();
+			var shadow:Shape = new Shape();
+
+			// Add shadow
+
+			shadow.graphics.beginFill(0);
+			shadow.graphics.drawRect(5, 5, 320, 200);
+			shadow.graphics.endFill();
+			shadow.alpha = 0.5;
+			addChild(shadow);
+			
+			// Add image
+			
+			loader.load(new URLRequest(url));
+			addChild(loader);
+
+			// Position picture
+
+			swidth = width - 32 * (depth + 1);
+			sheight = height;
+
+			x = Math.random() * swidth;
+			y = Math.random() * sheight + sheight;
+			scaleX = (depth + 1) / 10;
+			scaleY = (depth + 1) / 10;
+			speed = -depth / 2;
+			top = (depth + 1) * -20;
+		}
+		
+		// Move picture
+		
+		public function move():void {
+			y += speed;
+
+			if (y > sheight || y < top) {
+				x = Math.random() * swidth;
+				y = sheight;
+				if (speed > 0)
+				  speed *= -1;
+			}
+		}
+		
+		// Click picture to change direction
+		
+	 	public function onMouseDown(event:MouseEvent):void {
+			speed *= -1;
+		}
+	} 
+}
+			</pre>
+		</small>
+	</body>
+</html>

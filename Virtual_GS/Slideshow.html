@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20081101" />
+    <meta name="viewport" content="width=700" />
+    <title>Slideshow</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="Slideshow_files/Slideshow.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='Slideshow_files/SlideshowIE.css'/><![endif]-->
+    <script type="text/javascript" src="Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="Slideshow_files/Slideshow.js"></script>
+  </head>
+  <body style="background: #ffffff; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 0px; margin-left: auto; margin-right: auto; margin-top: 0px; overflow: hidden; position: relative; word-wrap: break-word;  background: #ffffff; text-align: left; width: 700px; " id="body_content">
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 35px; margin-top: 0px; position: relative; width: 630px; z-index: 1; ">
+    
+            <div id="widget0-navbar" class="navbar">
+
+      
+              <div id="widget0-bg" class="navbar-bg">
+
+        
+                <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                
+      
+</div>
+              
+    
+</div>
+          </div>
+          <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', 'Scripts/Widgets/Navbar', 'Scripts/Widgets/SharedResources', '.', {"current-page-GUID": "ECDC00BB-05CC-4F5D-890D-2327CC07EB11", "path-to-root": "", "isCollectionPage": "NO", "navbar-css": ".navbar {\n\tfont-family: Arial, sans-serif;\n\tfont-size: 1em;\n\tcolor: #666;\n\tmargin: 9px 0px 6px 0px;\n\tline-height: 30px;\n}\n\n.navbar-bg {\n\ttext-align: center;\n}\n\n.navbar-bg ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n\nli {\n\tlist-style-type: none;\n\tdisplay: inline;\n\tpadding: 0px 10px 0px 10px;\n}\n\n\nli a {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:visited {\n\ttext-decoration: none;\n\tcolor: #666;\n}\n\nli a:hover\r{\r\n \tcolor: #463C3C;\n\ttext-decoration: none;\r}\n\n\nli.current-page a\r{\r\t color: #463C3C;\n\ttext-decoration: none;\n\tfont-weight: bold;\r\r}"});
+//--><!]]></script>
+          <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 73px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div id="id1" style="height: 50px; left: 35px; position: absolute; top: 23px; width: 630px; z-index: 1; " class="style_SkipStroke">
+            <div class="text-content style_External_630_50" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header">Slideshow</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 1px; width: 630px;  height: 0px; left: 35px; position: absolute; top: 3px; width: 630px; z-index: 1; " class="tinyText">
+            <div style="position: relative; width: 630px; ">
+              <img src="Slideshow_files/shapeimage_1.jpg" alt="" style="height: 1px; left: 0px; position: absolute; top: 0px; width: 630px; " />
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+          <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+          <div style="margin-left: 340px; margin-top: 31px; position: relative; width: 360px; z-index: 1; " class="style_SkipStroke_1 flowDefining">
+            <div class="text-content style_External_360_1334" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-top: 0pt; " class="paragraph_style">program Slideshow;<br /></p>
+                <p class="paragraph_style">uses Types, QuickDraw, Events, GSOS, CTIUtils, MiscTool;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">const<br /></p>
+                <p class="paragraph_style">  MAX = 7;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  tick: LongInt;<br /></p>
+                <p class="paragraph_style">  title: Integer;<br /></p>
+                <p class="paragraph_style">  titles: array[0..MAX] of String;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Load Image }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure loadImage(path: string);<br /></p>
+                <p class="paragraph_style">var <br /></p>
+                <p class="paragraph_style">  openRec: OpenRecGS;<br /></p>
+                <p class="paragraph_style">  ioRec: IORecGS;<br /></p>
+                <p class="paragraph_style">  closeRec: RefNumRecGS;<br /></p>
+                <p class="paragraph_style">  pathNameGS: GSstring255;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Open image }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  p2GSstring(path, pathNameGS);<br /></p>
+                <p class="paragraph_style">  openRec.pCount := 2;<br /></p>
+                <p class="paragraph_style">  openRec.pathName := @pathNameGS;<br /></p>
+                <p class="paragraph_style">  openGS(openRec);<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Read into memory }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  if _ToolErr = 0 then begin<br /></p>
+                <p class="paragraph_style">    ioRec.pCount := 4;<br /></p>
+                <p class="paragraph_style">    ioRec.refNum := openRec.refNum;<br /></p>
+                <p class="paragraph_style">    ioRec.dataBuffer := ptr($E12000);<br /></p>
+                <p class="paragraph_style">    ioRec.requestCount := 32768;<br /></p>
+                <p class="paragraph_style">    readGS(ioRec);<br /></p>
+                <p class="paragraph_style">      <br /></p>
+                <p class="paragraph_style">    closeRec.pCount := 1;<br /></p>
+                <p class="paragraph_style">    closeRec.refNum := openRec.refNum;<br /></p>
+                <p class="paragraph_style">    closeGS(closeRec);<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">{ Fade screen }<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">procedure fade;<br /></p>
+                <p class="paragraph_style">var<br /></p>
+                <p class="paragraph_style">  i, j, k, color, cbit: Integer;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  cbit := 256;<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  for i := 1 to 3 do begin  <br /></p>
+                <p class="paragraph_style">    for j := 0 to 15 do begin<br /></p>
+                <p class="paragraph_style">      for k := 0 to 15 do begin<br /></p>
+                <p class="paragraph_style">        color := getColorEntry(0, k) - cbit;<br /></p>
+                <p class="paragraph_style">        if color &lt; 0 then color := 0; <br /></p>
+                <p class="paragraph_style">        setColorEntry(0, k, color);<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">      repeat until getTick &gt; tick;<br /></p>
+                <p class="paragraph_style">      tick := getTick;<br /></p>
+                <p class="paragraph_style">    end; <br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">    cbit := cbit div 16;<br /></p>
+                <p class="paragraph_style">  end;<br /></p>
+                <p class="paragraph_style">end;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">begin<br /></p>
+                <p class="paragraph_style">  graphics(320);<br /></p>
+                <p class="paragraph_style">  hideCursor;<br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  { Setup } <br /></p>
+                <p class="paragraph_style"><br /></p>
+                <p class="paragraph_style">  title := 0;<br /></p>
+                <p class="paragraph_style">  titles[0] := 'Pam.pic';<br /></p>
+                <p class="paragraph_style">  titles[1] := 'Girl.pic';<br /></p>
+                <p class="paragraph_style">  titles[2] := ‘RedHood.pic’;<br /></p>
+                <p class="paragraph_style">  titles[3] := 'Clown.pic';<br /></p>
+                <p class="paragraph_style">  titles[4] := 'Fruits.pic';<br /></p>
+                <p class="paragraph_style">  titles[5] := 'Flower.pic';<br /></p>
+                <p class="paragraph_style">  titles[6] := 'Taj.pic';<br /></p>
+                <p class="paragraph_style">  titles[7] := 'Dragon.pic';<br /></p>
+                <p class="paragraph_style">  <br /></p>
+                <p class="paragraph_style">  repeat<br /></p>
+                <p class="paragraph_style">    tick := getTick;<br /></p>
+                <p class="paragraph_style">    loadImage(titles[title]);<br /></p>
+                <p class="paragraph_style">    repeat<br /></p>
+                <p class="paragraph_style">      if button(0) then begin<br /></p>
+                <p class="paragraph_style">        fade; <br /></p>
+                <p class="paragraph_style">        exit;<br /></p>
+                <p class="paragraph_style">      end;<br /></p>
+                <p class="paragraph_style">    until getTick - tick &gt; 200;<br /></p>
+                <p class="paragraph_style">    tick := getTick;<br /></p>
+                <p class="paragraph_style">    <br /></p>
+                <p class="paragraph_style">    inc(title);<br /></p>
+                <p class="paragraph_style">    if title &gt; MAX then title := 0;<br /></p>
+                <p class="paragraph_style">    fade;   <br /></p>
+                <p class="paragraph_style">  until button(0);<br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style">end.</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div id="id2" style="height: 199px; left: 0px; position: absolute; top: 252px; width: 320px; z-index: 1; " class="style_SkipStroke_2">
+            <div class="text-content graphic_textbox_layout_style_default_External_320_199" style="padding: 0px; ">
+              <div class="graphic_textbox_layout_style_default">
+                <p style="padding-top: 0pt; " class="paragraph_style_1">A slideshow program for the beautiful pictures in <a class="class1" href="Graphics_Gallery.html" title="Graphics_Gallery.html">graphics gallery</a>,<br /></p>
+                <p class="paragraph_style_1"><br /></p>
+                <p style="padding-bottom: 0pt; " class="paragraph_style_1">This program shows how to load a 320x200 Super Hires picture on screen, then fade off. The loadImage procedure can be used as a black box in any program to load a Super Hires image. The fading of the screen is done by reducing the intensity of red, green, blue components of all the colors in the palette.</p>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript"><!--
+writeMovie1();
+--></script>
+          
+
+
+          <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+        </div>
+        <div style="height: 0px; line-height: 0px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,295 @@
+.Body {
+    color: #3c1503;
+    font-family: 'HoeflerText-Regular', 'Hoefler Text', 'Times New Roman', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    opacity: 1.00;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0px;
+    text-transform: none;
+}
+.Header {
+    color: #c43e2b;
+    font-family: 'Baskerville-SemiBold', 'Baskerville', 'Baskerville Semibold', 'Times New Roman', serif;
+    font-size: 54px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 61px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    opacity: 1.00;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0px;
+    text-transform: none;
+}
+.Normal_External_490_36 {
+    position: relative;
+}
+.Normal_External_368_61 {
+    position: relative;
+}
+.style_SkipStroke_1 {
+    background: transparent;
+    opacity: 1.00;
+}
+.style_SkipStroke {
+    background: transparent;
+    opacity: 1.00;
+}
+.Normal_External_490_48 {
+    position: relative;
+}
+.style_SkipStroke_2 {
+    background: transparent;
+    opacity: 1.00;
+}
+.style_SkipStroke_3 {
+    background: transparent;
+    opacity: 1.00;
+}
+.Normal {
+    padding: 0px;
+}
+.Title {
+    color: #c43e2b;
+    font-family: 'Baskerville-SemiBold', 'Baskerville', 'Baskerville Semibold', 'Times New Roman', serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    opacity: 1.00;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0px;
+    text-transform: none;
+}
+.graphic_generic_body_textbox_style_default_SkipStroke {
+    background: transparent;
+    opacity: 1.00;
+}
+.graphic_generic_header_textbox_style_default_SkipStroke {
+    background: transparent;
+    opacity: 1.00;
+}
+.graphic_generic_title_textbox_style_default_SkipStroke {
+    background: transparent;
+    opacity: 1.00;
+}
+.graphic_image_style_default_SkipStroke {
+    background: transparent;
+    opacity: 1.00;
+}
+a {
+    color: #d62405;
+    text-decoration: none;
+}
+a:visited {
+    color: #763f2c;
+    text-decoration: underline;
+}
+a:hover {
+    color: #c97844;
+    text-decoration: underline;
+}
+#widget1 a {
+    color: #d62405;
+    text-decoration: none;
+}
+#widget1 a:visited {
+    color: #763f2c;
+    text-decoration: underline;
+}
+#widget0 .Comment_Posted_Date {
+    color: #763f2c;
+    font-family: 'AppleCasual', 'Casual', 'Apple Casual', 'Comic Sans MS', serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    opacity: 1.00;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
+}
+#widget0 a:visited {
+    color: #763f2c;
+    text-decoration: underline;
+}
+.bumper {
+    font-size: 1px;
+    line-height: 1px;
+}
+#widget2 .Comment_Posted_Date {
+    color: #763f2c;
+    font-family: 'AppleCasual', 'Casual', 'Apple Casual', 'Comic Sans MS', serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    opacity: 1.00;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
+}
+#widget0 a:hover {
+    color: #c97844;
+    text-decoration: underline;
+}
+#widget1 .Caption {
+    color: #3c1502;
+    font-family: 'AppleCasual', 'Casual', 'Apple Casual', 'Comic Sans MS', serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    opacity: 1.00;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+}
+#widget1 .Comment_Posted_Date {
+    color: #763f2c;
+    font-family: 'AppleCasual', 'Casual', 'Apple Casual', 'Comic Sans MS', serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    opacity: 1.00;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
+}
+.tinyText {
+    font-size: 1px;
+    line-height: 1px;
+}
+#widget2 a {
+    color: #d62405;
+    text-decoration: none;
+}
+#widget0 a {
+    color: #d62405;
+    text-decoration: none;
+}
+#widget2 a:visited {
+    color: #763f2c;
+    text-decoration: underline;
+}
+#widget1 a:hover {
+    color: #c97844;
+    text-decoration: underline;
+}
+#widget2 a:hover {
+    color: #c97844;
+    text-decoration: underline;
+}
+#id3 canvas {
+    z-index: -1;
+}
+#widget1 {
+    display: none;
+}
+#id3 div.caption span.title {
+    color: #3c1502;
+    font-family: 'AppleCasual', 'Casual', 'Apple Casual', 'Comic Sans MS', serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 16px;
+    opacity: 1.00;
+    text-decoration: none;
+    text-transform: none;
+}
+.spacer {
+    font-size: 1px;
+    line-height: 1px;
+}
+#id3 div.caption {
+    line-height: 16px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    text-align: center;
+    text-indent: 0px;
+}
+body { 
+    -webkit-text-size-adjust: none;
+}
+div { 
+    overflow: visible; 
+}
+img { 
+    border: none; 
+}
+.InlineBlock { 
+    display: inline; 
+}
+.InlineBlock { 
+    display: inline-block; 
+}
+.inline-block {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom:0.3em;
+}
+.vertical-align-middle-middlebox {
+    display: table;
+}
+.vertical-align-middle-innerbox {
+    display: table-cell;
+    vertical-align: middle;
+}
+div.paragraph {
+    position: relative;
+}
+li.full-width {
+    width: 100;
+}

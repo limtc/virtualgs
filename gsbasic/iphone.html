@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<title>GScript BASIC</title>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="viewport" content="width=device-width, user-scalable=no"/>
+		<link rel="apple-touch-icon" href="/gsbasic/apple-touch-icon.png"/>
+		<style>
+			body {
+				margin: auto;
+				color: white;
+				background-color: blue;
+				font-family: courier, monospace;
+				font-size: 12;
+			}
+			
+			#scriptArea {
+				color: white;
+				background-color: blue;
+				font-family: courier, monospace;
+				font-weight: bold;
+				font-size: 12;
+			 }
+		</style>
+		<script>
+			function hideBar() {
+				setTimeout(function() { window.scrollTo(0, 1) }, 100)
+			}
+			
+            function loadCombo() {
+            	hideBar();
+            	var file = document.getElementById("combo").value;
+				load(file);
+            }
+            
+			function load(file) {
+				var request = new XMLHttpRequest();
+				var area = document.getElementById("scriptArea");
+		
+				if (request) {
+					request.open("GET", "scripts/" + file + ".js", true);
+			
+					request.onreadystatechange = function() {
+						if (request.readyState == 4)
+							area.value = request.responseText;
+						else
+							area.value = "";
+					};
+			
+					request.send(null);
+				}
+				else
+					area.value = "";
+					
+				document.getElementById("canvasArea").src = "";
+			}
+
+			function newScript() {
+				area = document.getElementById("scriptArea");
+				
+				if (area.value.length > 0) {
+					if (!confirm("This will erase the current program, are you sure?"))
+						return;
+				}
+
+				area.value = "";				
+				document.getElementById("canvasArea").src = "";
+			}
+			
+			function runScript() {
+				hideBar();
+				var area = document.getElementById("canvasArea");
+				area.src ="runiphone.html?script=" + escape(document.getElementById("scriptArea").value);
+			}
+			
+			function stopScript() {
+				document.getElementById("canvasArea").src = "";
+			}
+			
+			function loadScript() {
+				area = document.getElementById("scriptArea");
+				
+				if (area.value.length > 0) {
+					if (!confirm("This will erase current program, are you sure?"))
+						return;
+				}
+				
+				var script = readCookie("script");
+				area.value = (!script) ? "" : unescape(script);
+				document.getElementById("canvasArea").src = "";
+			}
+			
+			function saveScript() {
+				area = document.getElementById("scriptArea");
+				
+				if (area.value.length > 0) {
+					writeCookie("script", escape(area.value), 365);
+					alert("The program is saved.");
+				}
+			}
+			
+			// Cookie functions
+			
+			function readCookie(name) {
+				var key = name + "=";
+				var ca = document.cookie.split(';');
+				
+				for (var i = 0; i < ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') 
+						c = c.substring(1, c.length);
+						
+					if (c.indexOf(key) == 0) 
+						return c.substring(key.length, c.length);
+				}
+
+				return null;
+			}
+			
+			function writeCookie(name, value, days) {
+				var date = new Date();
+
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 *1000));				
+				document.cookie = name + "=" + value + "; expires=" + date.toGMTString();
+			}
+   		</script>
+	</head>
+	<body onload="hideBar()">
+		<div align="middle">
+			<b>GScript BASIC</b>
+			<select id="combo" onChange="loadCombo()">
+				<option value="apple">Apple ][ Forever</option>
+				<option value="birthday">Birthday</option>
+				<option value="brainy">Brainy</option>
+				<option value="demo320">Demo</option>
+				<option value="kaleidoscope">Kaleidoscope</option>
+				<option value="lrdemo">Lores Demo</option>
+				<option value="pattern320">Pattern</option>
+				<option value="night">Night</option>
+				<option value="lrstars">Stars</option>
+				<option value="pong">Pong Demo</option>
+				<option value="rndlores">Random Painter</option>
+			</select>
+			<br>
+			<textarea id="scriptArea" cols="38" rows="10" autocorrect="off" autocapitalize="off" autocomplete="off"></textarea><br>
+			<input type="button" value="New" onclick="newScript()">
+			<input type="button" value="Load" onclick="loadScript()">
+			<input type="button" value="Save" onclick="saveScript()">
+			<input type="button" value="Run" onclick="runScript()">
+			<input type="button" value="Stop" onclick="stopScript()"><br>
+			<iframe id="canvasArea" src="iphonetext.html" frameborder="0" width="320" height="250" scrolling="no"></iframe>
+		</div>
+	</body>
+</html>

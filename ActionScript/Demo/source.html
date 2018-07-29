@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Demo</title>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body bgcolor="#222222" text="white" link="white" vlink="white">
+		<small>
+			<pre>
+package {
+	import flash.display.*;
+	import flash.events.*;
+
+	public class Demo extends Sprite {
+		private var color:int;
+		private var sw:int = stage.stageWidth;
+		private var sh:int = stage.stageHeight;
+		private var sx:int;
+		private var sy:int;
+		  			  						
+		public function Demo():void {			
+			if (sw == 0)
+				sw = 640;
+			
+			if (sh == 0)
+				sh = 400;
+				
+			sx = sw / 100;
+			sy = sh / 100;
+				
+			color = 0xff;
+			addEventListener(Event.ENTER_FRAME, onEnterFrame);
+			stage.frameRate = 2;
+			stage.displayState = StageDisplayState.FULL_SCREEN;
+			stage.scaleMode = StageScaleMode.EXACT_FIT;
+		}
+		
+		private function onEnterFrame(event:Event):void {
+			var i:int;
+			
+			graphics.clear();
+			
+			// Draw stars
+
+			for (i = 0; i < 100; i++) {
+				graphics.beginFill(Math.random() * 0xffffff);
+				graphics.drawCircle(Math.random() * sw, Math.random() * sh, 1);
+				graphics.endFill();
+			}
+
+			// Draw lines
+
+			for (i = 0; i < 100; i++) {
+				graphics.lineStyle(1, color);				
+				graphics.moveTo(i * sx, 0);
+				graphics.lineTo(0, sh - 1 - i * sy);
+				graphics.moveTo(sw - 1 - i * sx, sh - 1);
+				graphics.lineTo(sw - 1, i * sy);
+			}
+			
+			color += 0x1100;
+			if (color == 0xffffff) {
+				color = 0xff;
+			}
+		}
+	} 
+}
+			</pre>
+		</small>
+	</body>
+</html>

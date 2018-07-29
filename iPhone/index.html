@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Virtual GS</title>
+		<meta name="viewport" content="width=160">
+		<style>
+			body { color: white; background-color: black }
+		</style>
+		<script>
+            function run() {
+            	var file = document.getElementById("combo").value;            	
+				document.location.href = file + ".html";                
+            }
+   		</script>
+	</head>
+	
+	<body>
+		<b>Virtual GS</b><br>
+		<select id="combo" onChange="run()">
+			<optgroup label="Animation">
+				<option value="balls">Bouncing Balls</option>
+				<option value="demo">Demo</option>
+				<option value="stars">Stars</option>
+				<option value="gspics">GS Pictures</option>
+			</optgroup>
+			<optgroup label="Web Apps">
+				<option value="doodle">Doodle</option>
+				<option value="kidspaint">Kids Paint</option>
+				<option value="paint">Simple Paint</option>
+			</optgroup>
+		</select>
+	</body>
+</html>
